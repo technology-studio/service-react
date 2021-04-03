@@ -32,10 +32,11 @@
   "devDependencies": {
     "@txo-peer-dep/log": "^3.0.0",
     "@txo/log-console": "^2.0.0",
-    "@types/react": "^17.0.3",
     "@types/enzyme": "^3.10.8",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^26.0.22",
+    "@types/lodash.get": "^4.4.6",
+    "@types/react": "^17.0.3",
     "@typescript-eslint/eslint-plugin": "^4.20.0",
     "@typescript-eslint/parser": "^4.20.0",
     "concurrently": "^6.0.0",
@@ -55,6 +56,8 @@
     "npm-check-updates": "^11.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.3",
+    "redux-saga": "^1.1.3",
     "rimraf": "^3.0.2",
     "ts-jest": "^26.5.4",
     "typescript": "^4.2.3"
