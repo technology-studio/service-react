@@ -11,8 +11,6 @@ import {
   ServiceError, isServiceErrorException,
 } from '@txo/service-prop'
 import { Log } from '@txo/log'
-// @ts-expect-error TODO: add typescript type declaration
-import { offlineRedux } from '@txo/offline-redux'
 
 import type { ContextServiceRedux } from '../Redux/Services/ContextServiceRedux'
 import type {
@@ -41,7 +39,6 @@ export function * contextServiceActionSaga<ATTRIBUTES extends Record<string, unk
       const serviceCallResult: ServiceCallResult<DATA, CALL_DATA> = yield call(serviceCall, attributes, serviceAttributes)
       const { data } = serviceCallResult
       yield put(redux.creators.serviceSuccess({ data }, { context }))
-      yield put(offlineRedux.creators.unsetOffline())
       if (promiseHandlers) {
         yield call(promiseHandlers.resolve, serviceCallResult)
       }

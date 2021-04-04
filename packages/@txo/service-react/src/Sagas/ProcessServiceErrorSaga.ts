@@ -5,14 +5,10 @@
 **/
 
 import {
-  put, race, take, delay,
+  race, delay,
 } from 'redux-saga/effects'
-import type { ServiceError } from '@txo/service-prop'
+import { ServiceError, ServiceErrorKey } from '@txo/service-prop'
 import { Log } from '@txo/log'
-// @ts-expect-error TODO: add typescript type declaration
-import { CODE_NETWORK_CONNECTION_ERROR } from '@txo/react-service-error-handler'
-// @ts-expect-error TODO: add typescript type declaration
-import { offlineRedux } from '@txo/offline-redux'
 
 import type { SagaGenerator } from '../Model/Types'
 
@@ -36,21 +32,16 @@ export function * processServiceErrorSaga (
 ): SagaGenerator<ProcessServiceErrorResult | undefined> {
   const { serviceErrorList, serviceOptions } = attributes
 
-  // TODO: exchange with key
-  if (serviceErrorList.some((key) => key === CODE_NETWORK_CONNECTION_ERROR)) {
+  if (serviceErrorList.some(({ key }) => key === ServiceErrorKey.NETWORK_ERROR)) {
     log.debug('NETWORK ERROR')
-    yield put(offlineRedux.creators.setOffline())
     if (serviceOptions?.retryUntilOnlinePeriod) {
       const retryUntilOnlinePeriod = serviceOptions.retryUntilOnlinePeriod
       yield race({
-        offlineClear: take(offlineRedux.types.unsetOffline),
         delay: delay(retryUntilOnlinePeriod),
       })
       return {
         retryCall: true,
       }
     }
-  } else {
-    yield put(offlineRedux.creators.unsetOffline())
   }
 }
