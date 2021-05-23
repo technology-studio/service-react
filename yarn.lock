@@ -708,10 +708,10 @@
     constant-case "^3.0.4"
     redux "^4.0.1"
 
-"@txo/service-prop@^1.0.0":
-  version "1.0.0"
-  resolved "https://npm.technologystudio.sk/@txo%2fservice-prop/-/service-prop-1.0.0.tgz#7e4fc238ce0d179799fc42ac7d4206afffe84444"
-  integrity sha512-U5fI2zy54OOMrK7Am1ZlvF3Ynvd3TdoP91gBVQwsTlrDxBFWAG00L+K2wswJVAXkXwu1pAnwp1yH54OvjPX4Vw==
+"@txo/service-prop@^1.1.0":
+  version "1.1.0"
+  resolved "https://npm.technologystudio.sk/@txo%2fservice-prop/-/service-prop-1.1.0.tgz#35a25f78a9578003379373f705d4ef3f7c2f9ee7"
+  integrity sha512-qnmWGZgflz6tHXwnXa72lHJviwD3Kg9sf9rAsUXrIocNsiOTFGAfvBqtYuIbUpq1ReyCO2Y0GcOUQiwSY8LmMA==
 
 "@types/babel__core@^7.0.0", "@types/babel__core@^7.1.7":
   version "7.1.14"

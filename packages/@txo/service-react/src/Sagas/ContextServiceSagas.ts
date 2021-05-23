@@ -8,7 +8,7 @@ import {
   call, put,
 } from 'redux-saga/effects'
 import {
-  ServiceError, isServiceErrorException,
+  ServiceError, isServiceErrorException, ServiceCallResult,
 } from '@txo/service-prop'
 import { Log } from '@txo/log'
 
@@ -17,7 +17,6 @@ import type {
   ContextServiceAction,
   ServiceOptions,
   SagaGenerator,
-  ServiceCallResult,
 } from '../Model/Types'
 
 import { processServiceErrorSaga } from './ProcessServiceErrorSaga'
@@ -25,13 +24,12 @@ import { processServiceErrorSaga } from './ProcessServiceErrorSaga'
 const log = new Log('txo.react-service.Sagas.ContextServiceSaga')
 
 export function * contextServiceActionSaga<ATTRIBUTES extends Record<string, unknown>, DATA, SERVICE_ATTRIBUTES, CALL_DATA> (
-  // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
-  serviceCall: (attributes: ATTRIBUTES, serviceAttributes: SERVICE_ATTRIBUTES) => Promise<DATA> | SagaGenerator<DATA extends undefined ? void : DATA>,
+  serviceCall: (attributes: ATTRIBUTES, serviceAttributes: SERVICE_ATTRIBUTES) => Promise<ServiceCallResult<DATA, CALL_DATA>> | SagaGenerator<ServiceCallResult<DATA, CALL_DATA>>,
   action: ContextServiceAction<ATTRIBUTES, DATA, CALL_DATA>,
   redux: ContextServiceRedux<ATTRIBUTES, DATA, CALL_DATA>,
   serviceAttributes: SERVICE_ATTRIBUTES,
   serviceOptions?: ServiceOptions,
-): SagaGenerator<DATA | null | undefined> {
+): SagaGenerator<ServiceCallResult<DATA, CALL_DATA> | null | undefined> {
   const { context, attributes, promiseHandlers } = action
   while (true) {
     try {
@@ -42,7 +40,7 @@ export function * contextServiceActionSaga<ATTRIBUTES extends Record<string, unk
       if (promiseHandlers) {
         yield call(promiseHandlers.resolve, serviceCallResult)
       }
-      return data
+      return serviceCallResult
     } catch (errorOrServiceErrorList) {
       log.debug('EXCEPTION')
       if (isServiceErrorException(errorOrServiceErrorList)) {

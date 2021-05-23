@@ -8,15 +8,10 @@ import type { Action } from '@txo/redux'
 
 import type { SagaGenerator } from './SagaTypes'
 
-import type { ServiceError } from '@txo/service-prop'
+import type { ServiceError, ServiceCallResult } from '@txo/service-prop'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface DefaultRootService {
-}
-
-export type ServiceCallResult<DATA=undefined, CALL_DATA=undefined> = {
-  data: DATA,
-  callData: CALL_DATA,
 }
 
 export type PromiseLikeServiceCallResult<DATA, CALL_DATA> = (
