@@ -7,6 +7,7 @@
 import update from 'immutability-helper'
 import type { ServiceError } from '@txo/service-prop'
 import {
+  FilterNode,
   ReduxHandler,
 } from '@txo/redux'
 import {
@@ -90,7 +91,8 @@ export const createContextServiceRedux = <
 ATTRIBUTES extends Record<string, unknown>,
 DATA = undefined,
 CALL_DATA = undefined,
->({ prefix, resettable }: {
+>({ filter: _filter, prefix, resettable }: {
+    filter: FilterNode,
     prefix: string,
     resettable?: boolean,
   }): ContextServiceRedux<ATTRIBUTES, DATA, CALL_DATA> => createContextRedux<ServiceState<DATA>, {
@@ -100,7 +102,7 @@ CALL_DATA = undefined,
     serviceClear: ReduxHandler<ServiceState<DATA>, undefined>,
     clearError: ReduxHandler<ServiceState<DATA>, ClearErrorAttributes>,
   }>({
-    filter,
+    filter: _filter ?? filter,
     initialState: {
       fetching: false,
       errorList: null,
