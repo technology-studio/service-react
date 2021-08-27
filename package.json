@@ -14,13 +14,14 @@
   "scripts": {
     "test": "jest",
     "test:watch": "concurrently \"yarn workspaces run build:watch\" \"jest --watch\"",
+    "build": "yarn wpd build && yarn wd build",
     "coverage": "jest --coverage && open coverage/lcov-report/index.html || xdg-open coverage/lcov-report/index.html",
     "lint": "eslint --format=node_modules/eslint-formatter-pretty --ext .jsx,.js,.ts,.tsx .",
     "fixcode": "eslint --format=node_modules/eslint-formatter-pretty --ext .jsx,.js,.ts,.tsx . --fix",
     "git-hook": "yarn -s lint",
     "postinstall": "husky install",
     "print-txo-packages": "yarn list 2> /dev/null|grep @txo|sed 's/.*\\(@txo[^@]*\\)@^*\\([^ ]*\\).*/\\1@\\2/g'|sort|uniq",
-    "sanity": "yarn lint && yarn tsc && yarn test && yarn outdated && echo 'success'",
+    "sanity": "yarn lint && yarn build && yarn tsc && yarn test && yarn outdated && echo 'success'",
     "wd": "yarn workspace @txo/service-react",
     "wpd": "yarn workspace @txo-peer-dep/service-react"
   },
