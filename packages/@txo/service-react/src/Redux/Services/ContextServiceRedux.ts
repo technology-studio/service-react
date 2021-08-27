@@ -7,6 +7,7 @@
 import update from 'immutability-helper'
 import type { ServiceError } from '@txo/service-prop'
 import {
+  FilterNode,
   ReduxHandler,
 } from '@txo/redux'
 import {
@@ -28,7 +29,7 @@ export type ServiceState<DATA> = {
 
 export type ContextServiceState<DATA = undefined> = ContextState<ServiceState<DATA>>
 
-const filter = <DATA>(contextServiceReduxState: ContextServiceState<DATA>): ContextServiceState<DATA> => {
+const defaultFilter = <DATA>(contextServiceReduxState: ContextServiceState<DATA>): ContextServiceState<DATA> => {
   if (contextServiceReduxState) {
     const _contextServiceReduxState: Record<string, unknown> = contextServiceReduxState
     if (typeof _contextServiceReduxState.fetching === 'boolean') {
@@ -43,7 +44,7 @@ const filter = <DATA>(contextServiceReduxState: ContextServiceState<DATA>): Cont
     }
     return Object.keys(_contextServiceReduxState).reduce(
       (state: Record<string, unknown>, key) => {
-        state[key] = filter(_contextServiceReduxState[key] as ContextServiceState<DATA>)
+        state[key] = defaultFilter(_contextServiceReduxState[key] as ContextServiceState<DATA>)
         return state
       },
       {},
@@ -90,7 +91,8 @@ export const createContextServiceRedux = <
 ATTRIBUTES extends Record<string, unknown>,
 DATA = undefined,
 CALL_DATA = undefined,
->({ prefix, resettable }: {
+>({ filter, prefix, resettable }: {
+    filter: FilterNode,
     prefix: string,
     resettable?: boolean,
   }): ContextServiceRedux<ATTRIBUTES, DATA, CALL_DATA> => createContextRedux<ServiceState<DATA>, {
@@ -100,7 +102,7 @@ CALL_DATA = undefined,
     serviceClear: ReduxHandler<ServiceState<DATA>, undefined>,
     clearError: ReduxHandler<ServiceState<DATA>, ClearErrorAttributes>,
   }>({
-    filter,
+    filter: filter ?? defaultFilter,
     initialState: {
       fetching: false,
       errorList: null,
