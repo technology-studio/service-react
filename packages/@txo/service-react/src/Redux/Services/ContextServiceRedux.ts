@@ -92,7 +92,7 @@ ATTRIBUTES extends Record<string, unknown>,
 DATA = undefined,
 CALL_DATA = undefined,
 >({ filter, prefix, resettable }: {
-    filter: FilterNode,
+    filter?: FilterNode,
     prefix: string,
     resettable?: boolean,
   }): ContextServiceRedux<ATTRIBUTES, DATA, CALL_DATA> => createContextRedux<ServiceState<DATA>, {
