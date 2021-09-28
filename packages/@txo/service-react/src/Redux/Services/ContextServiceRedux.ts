@@ -5,7 +5,7 @@
 **/
 
 import update from 'immutability-helper'
-import type { ServiceError } from '@txo/service-prop'
+import type { ServiceErrorException } from '@txo/service-prop'
 import {
   FilterNode,
   ReduxHandler,
@@ -23,7 +23,7 @@ import type {
 
 export type ServiceState<DATA> = {
   fetching: boolean,
-  errorList: ServiceError[] | null,
+  exception: ServiceErrorException | null,
   data: DATA | null,
 }
 
@@ -66,11 +66,7 @@ type ContextServiceSuccessAttributes<DATA> = {
 }
 
 type ContextServiceFailureAttributes = {
-  errorList: ServiceError[],
-}
-
-type ClearErrorAttributes = {
-  errorList: ServiceError[],
+  exception: ServiceErrorException,
 }
 
 export type ContextServiceActionCreators <ATTRIBUTES extends Record<string, unknown>, DATA, CALL_DATA> = {
@@ -78,7 +74,7 @@ export type ContextServiceActionCreators <ATTRIBUTES extends Record<string, unkn
   serviceSuccess: ContextActionCreator<ContextServiceSuccessAttributes<DATA>, ContextServiceActionAttributes>,
   serviceFailure: ContextActionCreator<ContextServiceFailureAttributes, ContextServiceActionAttributes>,
   serviceClear: ContextActionCreator<undefined, ContextServiceActionAttributes>,
-  clearError: ContextActionCreator<ClearErrorAttributes, ContextServiceActionAttributes>,
+  clearException: ContextActionCreator<undefined, ContextServiceActionAttributes>,
 }
 
 export type ContextServiceRedux<
@@ -100,28 +96,28 @@ CALL_DATA = undefined,
     serviceSuccess: ReduxHandler<ServiceState<DATA>, ContextServiceSuccessAttributes<DATA>>,
     serviceFailure: ReduxHandler<ServiceState<DATA>, ContextServiceFailureAttributes>,
     serviceClear: ReduxHandler<ServiceState<DATA>, undefined>,
-    clearError: ReduxHandler<ServiceState<DATA>, ClearErrorAttributes>,
+    clearException: ReduxHandler<ServiceState<DATA>, undefined>,
   }>({
     filter: filter ?? defaultFilter,
     initialState: {
       fetching: false,
-      errorList: null,
+      exception: null,
       data: null,
     },
     handlers: {
       serviceCall: (state: ServiceState<DATA>) => (
-        update(state, { $merge: { fetching: true, errorList: null } })
+        update(state, { $merge: { fetching: true, exception: null } })
       ),
       serviceSuccess: (state: ServiceState<DATA>, { data }: ContextServiceSuccessAttributes<DATA>) => (
-        update(state, { $merge: { fetching: false, errorList: null, data } })
+        update(state, { $merge: { fetching: false, exception: null, data } })
       ),
-      serviceFailure: (state: ServiceState<DATA>, { errorList }: ContextServiceFailureAttributes) => (
-        update(state, { $merge: { fetching: false, errorList: errorList } })
+      serviceFailure: (state: ServiceState<DATA>, { exception }: ContextServiceFailureAttributes) => (
+        update(state, { $merge: { fetching: false, exception: exception } })
       ),
       serviceClear: (state: ServiceState<DATA>) => (
-        update(state, { $merge: { fetching: false, errorList: null, data: null } })
+        update(state, { $merge: { fetching: false, exception: null, data: null } })
       ),
-      clearError: (state: ServiceState<DATA>) => update(state, { $merge: { errorList: null } }),
+      clearException: (state: ServiceState<DATA>) => update(state, { $merge: { exception: null } }),
     },
     prefix,
     resettable,

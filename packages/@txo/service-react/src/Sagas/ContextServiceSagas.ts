@@ -41,27 +41,28 @@ export function * contextServiceActionSaga<ATTRIBUTES extends Record<string, unk
         yield call(promiseHandlers.resolve, serviceCallResult)
       }
       return serviceCallResult
-    } catch (errorOrServiceErrorList) {
+    } catch (errorOrServiceErrorException) {
       log.debug('EXCEPTION')
-      if (isServiceErrorException(errorOrServiceErrorList)) {
-        const serviceErrorList: ServiceError[] = errorOrServiceErrorList.serviceErrorList.map(
+      if (isServiceErrorException(errorOrServiceErrorException)) {
+        const serviceErrorList: ServiceError[] = errorOrServiceErrorException.serviceErrorList.map(
           serviceError => ({
             context,
             ...serviceError,
           }),
         )
+        errorOrServiceErrorException.serviceErrorList = serviceErrorList
 
         const result = yield call(processServiceErrorSaga, { serviceErrorList })
         if (result?.retryCall) {
           continue
         }
-        yield put(redux.creators.serviceFailure({ errorList: serviceErrorList }, { context }))
+        yield put(redux.creators.serviceFailure({ exception: errorOrServiceErrorException }, { context }))
         if (promiseHandlers) {
-          yield call(promiseHandlers.reject, serviceErrorList)
+          yield call(promiseHandlers.reject, errorOrServiceErrorException)
         }
         return
       } else {
-        throw errorOrServiceErrorList
+        throw errorOrServiceErrorException
       }
     }
   }
