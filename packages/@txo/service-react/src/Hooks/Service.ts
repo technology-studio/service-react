@@ -19,6 +19,7 @@ import type {
   ValueOrValueMapper,
   CallAttributes,
   ServiceResult,
+  ServiceErrorException,
 } from '@txo/service-prop'
 import { evaluateValue } from '../Api/EvaulatedValueHelper'
 import type {
@@ -75,11 +76,11 @@ export const useService = <
       ),
     ), [dispatch, evaluatedContext, redux.creators])
 
-  const clearException = useCallback(() => {
+  const clearException = useCallback((serviceErrorException: ServiceErrorException) => {
     dispatch(
       redux.creators.clearException(
         undefined,
-        { context: typeof context === 'string' ? context : context() },
+        { context: serviceErrorException.context },
       ),
     )
   }, [dispatch, redux.creators])
