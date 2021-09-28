@@ -8,7 +8,7 @@ import type { Action } from '@txo/redux'
 
 import type { SagaGenerator } from './SagaTypes'
 
-import type { ServiceError, ServiceCallResult } from '@txo/service-prop'
+import type { ServiceErrorException, ServiceCallResult } from '@txo/service-prop'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface DefaultRootService {
@@ -21,7 +21,7 @@ export type PromiseLikeServiceCallResult<DATA, CALL_DATA> = (
 
 export type ServicePromiseHandlers<DATA, CALL_DATA> = {
   resolve: (result: PromiseLikeServiceCallResult<DATA, CALL_DATA>) => void,
-  reject: (errorList: ServiceError[]) => void,
+  reject: (errorList: ServiceErrorException) => void,
 }
 export type ServiceAttributes = {
   service: DefaultRootService,

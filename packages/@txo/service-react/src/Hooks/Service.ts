@@ -16,10 +16,10 @@ import {
 import type {
   BooleanMap,
   ServiceProp,
-  ServiceError,
   ValueOrValueMapper,
   CallAttributes,
   ServiceResult,
+  ServiceErrorException,
 } from '@txo/service-prop'
 import { evaluateValue } from '../Api/EvaulatedValueHelper'
 import type {
@@ -66,7 +66,7 @@ export const useService = <
   const evaluatedContext = evaluateValue(context)
   const dispatch = useDispatch()
   const contextServiceState = useSelector(selector)
-  const { data, fetching, errorList } = selectContextServiceState(contextServiceState, evaluatedContext)
+  const { data, fetching, exception } = selectContextServiceState(contextServiceState, evaluatedContext)
 
   const clear = useCallback(
     (callContext?: string) => dispatch(
@@ -76,26 +76,13 @@ export const useService = <
       ),
     ), [dispatch, evaluatedContext, redux.creators])
 
-  const clearError = useCallback((errorList: ServiceError[]) => {
-    const contextToErrorListMap: Record<string, ServiceError[]> = {}
-    errorList.forEach(error => {
-      if (error.context) {
-        let contextErrorList = contextToErrorListMap[error.context]
-        if (!contextErrorList) {
-          contextErrorList = []
-          contextToErrorListMap[error.context] = contextErrorList
-        }
-        contextErrorList.push(error)
-      }
-    })
-    Object.keys(contextToErrorListMap).forEach(context => {
-      dispatch(
-        redux.creators.clearError(
-          { errorList: contextToErrorListMap[context] },
-          { context },
-        ),
-      )
-    })
+  const clearException = useCallback((serviceErrorException: ServiceErrorException) => {
+    dispatch(
+      redux.creators.clearException(
+        undefined,
+        { context: serviceErrorException.context },
+      ),
+    )
   }, [dispatch, redux.creators])
 
   const call = useCallback(async (
@@ -115,8 +102,8 @@ export const useService = <
               data,
               call,
               clear,
-              clearError,
-              errorList: null,
+              clearException,
+              exception: null,
               fetching: false,
               options: { validationAttributes },
             },
@@ -132,17 +119,17 @@ export const useService = <
         context: evaluatedContext + (callAttributes?.context ? `.${callAttributes.context!}` : ''),
       }))
     })
-  ), [clear, clearError, dispatch, evaluatedContext, redux.creators, validationAttributes])
+  ), [clear, clearException, dispatch, evaluatedContext, redux.creators, validationAttributes])
 
   return useMemo<ServiceProp<ATTRIBUTES, DATA, CALL_ATTRIBUTES, CALL_DATA>>(() => ({
     call,
     clear,
-    clearError,
+    clearException,
     options: {
       validationAttributes,
     },
     data,
-    errorList,
+    exception,
     fetching,
-  }), [call, clear, clearError, data, errorList, fetching, validationAttributes])
+  }), [call, clear, clearException, data, exception, fetching, validationAttributes])
 }
