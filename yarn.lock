@@ -935,10 +935,10 @@
     constant-case "^3.0.4"
     redux "^4.0.1"
 
-"@txo/service-prop@^1.1.0":
-  version "1.1.0"
-  resolved "https://npm.technologystudio.sk/@txo%2fservice-prop/-/service-prop-1.1.0.tgz#35a25f78a9578003379373f705d4ef3f7c2f9ee7"
-  integrity sha512-qnmWGZgflz6tHXwnXa72lHJviwD3Kg9sf9rAsUXrIocNsiOTFGAfvBqtYuIbUpq1ReyCO2Y0GcOUQiwSY8LmMA==
+"@txo/service-prop@^2.0.0":
+  version "2.0.0"
+  resolved "https://npm.technologystudio.sk/@txo%2fservice-prop/-/service-prop-2.0.0.tgz#145a2fe1cc2ffdc7b98856a15a3baddaa980ad22"
+  integrity sha512-juNnjkfTrMjVcdHN5Fa4u+Hc5bAq7dVNqIp+OQM/s2+L8APtTtg3waOQJG3p9nVk6Qpd5sDkAyKnMs+lHQ0PQA==
 
 "@types/babel__core@^7.0.0":
   version "7.1.14"

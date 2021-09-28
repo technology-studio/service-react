@@ -33,6 +33,7 @@
   "devDependencies": {
     "@txo-peer-dep/log": "^4.0.0",
     "@txo/log-console": "^3.0.0",
+    "@txo/service-prop": "^2.0.0",
     "@types/enzyme": "^3.10.9",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^27.0.1",
