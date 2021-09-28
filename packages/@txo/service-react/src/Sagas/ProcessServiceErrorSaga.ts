@@ -7,7 +7,7 @@
 import {
   race, delay,
 } from 'redux-saga/effects'
-import { ServiceError, ServiceErrorKey } from '@txo/service-prop'
+import { ServiceErrorException, ServiceErrorKey } from '@txo/service-prop'
 import { Log } from '@txo/log'
 
 import type { SagaGenerator } from '../Model/Types'
@@ -19,7 +19,7 @@ type ServiceOptions = {
 }
 
 type ProcessServiceErrorAttributes = {
-  serviceErrorList: ServiceError[],
+  serviceErrorException: ServiceErrorException,
   serviceOptions?: ServiceOptions,
 }
 
@@ -30,7 +30,7 @@ type ProcessServiceErrorResult = {
 export function * processServiceErrorSaga (
   attributes: ProcessServiceErrorAttributes,
 ): SagaGenerator<ProcessServiceErrorResult | undefined> {
-  const { serviceErrorList, serviceOptions } = attributes
+  const { serviceErrorException: { serviceErrorList }, serviceOptions } = attributes
 
   if (serviceErrorList.some(({ key }) => key === ServiceErrorKey.NETWORK_ERROR)) {
     log.debug('NETWORK ERROR')

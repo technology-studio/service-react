@@ -47,7 +47,7 @@ export function * contextServiceActionSaga<ATTRIBUTES extends Record<string, unk
       if (isServiceErrorException(errorOrServiceErrorException)) {
         errorOrServiceErrorException.context = context
 
-        const result = yield call(processServiceErrorSaga, { serviceErrorList: errorOrServiceErrorException.serviceErrorList })
+        const result = yield call(processServiceErrorSaga, { serviceErrorException: errorOrServiceErrorException })
         if (result?.retryCall) {
           continue
         }
