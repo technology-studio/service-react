@@ -8,7 +8,8 @@ import {
   call, put,
 } from 'redux-saga/effects'
 import {
-  ServiceError, isServiceErrorException, ServiceCallResult,
+  isServiceErrorException,
+  ServiceCallResult,
 } from '@txo/service-prop'
 import { Log } from '@txo/log'
 
@@ -44,15 +45,9 @@ export function * contextServiceActionSaga<ATTRIBUTES extends Record<string, unk
     } catch (errorOrServiceErrorException) {
       log.debug('EXCEPTION')
       if (isServiceErrorException(errorOrServiceErrorException)) {
-        const serviceErrorList: ServiceError[] = errorOrServiceErrorException.serviceErrorList.map(
-          serviceError => ({
-            context,
-            ...serviceError,
-          }),
-        )
-        errorOrServiceErrorException.serviceErrorList = serviceErrorList
+        errorOrServiceErrorException.context = context
 
-        const result = yield call(processServiceErrorSaga, { serviceErrorList })
+        const result = yield call(processServiceErrorSaga, { serviceErrorList: errorOrServiceErrorException.serviceErrorList })
         if (result?.retryCall) {
           continue
         }
