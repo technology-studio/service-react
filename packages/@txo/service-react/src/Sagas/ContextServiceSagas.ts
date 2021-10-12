@@ -25,7 +25,7 @@ import { processServiceErrorSaga } from './ProcessServiceErrorSaga'
 const log = new Log('txo.react-service.Sagas.ContextServiceSaga')
 
 export function * contextServiceActionSaga<ATTRIBUTES extends Record<string, unknown>, DATA, SERVICE_ATTRIBUTES, CALL_DATA> (
-  serviceCall: (attributes: ATTRIBUTES, serviceAttributes: SERVICE_ATTRIBUTES) => Promise<ServiceCallResult<DATA, CALL_DATA>> | SagaGenerator<ServiceCallResult<DATA, CALL_DATA>>,
+  serviceCall: (attributes: ATTRIBUTES, serviceAttributes: SERVICE_ATTRIBUTES & { context: string }) => Promise<ServiceCallResult<DATA, CALL_DATA>> | SagaGenerator<ServiceCallResult<DATA, CALL_DATA>>,
   action: ContextServiceAction<ATTRIBUTES, DATA, CALL_DATA>,
   redux: ContextServiceRedux<ATTRIBUTES, DATA, CALL_DATA>,
   serviceAttributes: SERVICE_ATTRIBUTES,
@@ -35,7 +35,11 @@ export function * contextServiceActionSaga<ATTRIBUTES extends Record<string, unk
   while (true) {
     try {
       log.debug('CALL', { action, serviceAttributes, serviceOptions })
-      const serviceCallResult: ServiceCallResult<DATA, CALL_DATA> = yield call(serviceCall, attributes, serviceAttributes)
+      const context = `${action.context}(${JSON.stringify(action.attributes)})`
+      const serviceCallResult: ServiceCallResult<DATA, CALL_DATA> = yield call(serviceCall, attributes, {
+        ...serviceAttributes,
+        context,
+      })
       const { data } = serviceCallResult
       yield put(redux.creators.serviceSuccess({ data }, { context }))
       if (promiseHandlers) {
@@ -45,8 +49,6 @@ export function * contextServiceActionSaga<ATTRIBUTES extends Record<string, unk
     } catch (errorOrServiceErrorException) {
       log.debug('EXCEPTION')
       if (isServiceErrorException(errorOrServiceErrorException)) {
-        errorOrServiceErrorException.context = context
-
         const result = yield call(processServiceErrorSaga, { serviceErrorException: errorOrServiceErrorException })
         if (result?.retryCall) {
           continue
