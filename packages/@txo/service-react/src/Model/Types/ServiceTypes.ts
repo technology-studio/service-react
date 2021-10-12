@@ -27,6 +27,10 @@ export type ServiceAttributes = {
   service: DefaultRootService,
 }
 
+export type ContextServiceAttributes = ServiceAttributes & {
+  context: string,
+}
+
 export type ServiceAction<ATTRIBUTES, DATA, CALL_DATA> = Action & {
   attributes: ATTRIBUTES,
   promiseHandlers?: ServicePromiseHandlers<DATA, CALL_DATA>,
