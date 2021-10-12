@@ -35,10 +35,9 @@ export function * contextServiceActionSaga<ATTRIBUTES extends Record<string, unk
   while (true) {
     try {
       log.debug('CALL', { action, serviceAttributes, serviceOptions })
-      const context = `${action.context}(${JSON.stringify(action.attributes)})`
       const serviceCallResult: ServiceCallResult<DATA, CALL_DATA> = yield call(serviceCall, attributes, {
         ...serviceAttributes,
-        context,
+        context: action.context,
       })
       const { data } = serviceCallResult
       yield put(redux.creators.serviceSuccess({ data }, { context }))
