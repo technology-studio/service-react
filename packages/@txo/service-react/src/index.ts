@@ -4,6 +4,7 @@
  * @Copyright: Technology Studio
 **/
 
+export * from './Api'
 export * from './Hooks/Service'
 export * from './Redux/Services'
 export * from './Sagas'
