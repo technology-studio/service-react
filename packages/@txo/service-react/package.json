@@ -30,12 +30,12 @@
     "@txo/context-redux": "^3.0.0",
     "@txo/log": "^2.0.0",
     "@txo/redux": "^4.0.6",
-    "@txo/service-prop": "^2.0.2",
+    "@txo/service-prop": "^2.1.0",
     "lodash.get": "^4.4.2"
   },
   "peerDependencies": {
     "immutability-helper": "*",
-    "react-redux": "^7.2.5",
+    "react-redux": "^7.2.6",
     "redux-saga": "^1.1.3"
   }
 }
