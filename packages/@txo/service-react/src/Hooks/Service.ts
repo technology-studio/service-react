@@ -18,8 +18,8 @@ import type {
   ServiceProp,
   ValueOrValueMapper,
   CallAttributes,
-  ServiceResult,
   ServiceErrorException,
+  ServiceCallResult,
 } from '@txo/service-prop'
 import { evaluateValue } from '../Api/EvaulatedValueHelper'
 import type {
@@ -35,18 +35,18 @@ import type {
   PromiseLikeServiceCallResult,
 } from '../Model/Types'
 
-type ServiceDeclaration <
-ATTRIBUTES extends Record<string, unknown> | undefined,
-DATA,
-REDUX_STATE,
-CALL_DATA = undefined,
-> = {
-  context?: ValueOrValueMapper<string>,
-  validationAttributes?: ValueOrValueMapper<string[] | BooleanMap>,
-  selector: (state: REDUX_STATE) => ContextServiceState<DATA>,
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  redux: ContextServiceRedux<NonNullable<ATTRIBUTES> | {}, DATA, CALL_DATA>,
-}
+type ServiceDeclaration<
+  ATTRIBUTES extends Record<string, unknown> | undefined,
+  DATA,
+  REDUX_STATE,
+  CALL_DATA = undefined,
+  > = {
+    context?: ValueOrValueMapper<string>,
+    validationAttributes?: ValueOrValueMapper<string[] | BooleanMap>,
+    selector: (state: REDUX_STATE) => ContextServiceState<DATA>,
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    redux: ContextServiceRedux<NonNullable<ATTRIBUTES> | {}, DATA, CALL_DATA>,
+  }
 
 export const useService = <
   ATTRIBUTES extends Record<string, unknown> | undefined,
@@ -88,29 +88,13 @@ export const useService = <
   const call = useCallback(async (
     attributes: ATTRIBUTES,
     callAttributes?: CALL_ATTRIBUTES,
-  ): Promise<ServiceResult<ATTRIBUTES, DATA, CALL_ATTRIBUTES, CALL_DATA>> => (
+  ): Promise<ServiceCallResult<DATA, CALL_DATA>> => (
     new Promise((resolve, reject) => {
       const serviceCallResolve = (
         serviceCallResult: PromiseLikeServiceCallResult<DATA, CALL_DATA>,
       ): void => {
         resolve(
-          Promise.resolve(serviceCallResult).then(({
-            data,
-            callData,
-          }) => ({
-            serviceProp: {
-              data,
-              call,
-              clear,
-              clearException,
-              exception: null,
-              fetching: false,
-              options: { validationAttributes },
-            },
-            attributes,
-            callAttributes,
-            callData: callData,
-          })),
+          Promise.resolve(serviceCallResult),
         )
       }
       dispatch(redux.creators.serviceCall(attributes ?? {}, {
