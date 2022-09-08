@@ -22,6 +22,7 @@ configManager.update({
     //   nodeEnvironmentList: ['development'],
     // },
   },
+  payloadProcessor: () => (payload: Record<string, unknown>) => JSON.stringify(payload, null, 2),
   defaultLevelForNodeEnvironmentMap: {
     production: Level.ERROR,
     development: Level.INFO,
