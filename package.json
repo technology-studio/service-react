@@ -6,12 +6,12 @@
   "typings": "lib/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/technology-studio/service-react.git"
+    "url": "https://github.com/technology-studio/service-react.git"
   },
   "author": {
     "name": "Technology Studio",
     "email": "npm@technologystudio.sk",
-    "url": "https://bitbucket.org/technology-studio/"
+    "url": "https://github.com/technology-studio/"
   },
   "license": "MIT",
   "private": false,
