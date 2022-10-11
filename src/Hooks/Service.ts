@@ -102,7 +102,7 @@ export const useService = <
         context: evaluatedContext + (callAttributes?.context ? `.${callAttributes.context}` : ''),
       }))
     })
-  ), [clear, clearException, dispatch, evaluatedContext, redux.creators, validationAttributes])
+  ), [dispatch, evaluatedContext, redux.creators])
 
   return useMemo<ServiceProp<ATTRIBUTES, DATA, CALL_ATTRIBUTES, CALL_DATA>>(() => ({
     call,

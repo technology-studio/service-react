@@ -1,6 +1,6 @@
 {
   "extends": [
-    "txo-typescript",
+    "txo-typescript-react",
     "plugin:jest/recommended"
   ],
   "parser": "@typescript-eslint/parser",
