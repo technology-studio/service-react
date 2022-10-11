@@ -10,7 +10,6 @@ export type ServiceOptions = {
   retryUntilOnlinePeriod?: number,
 }
 
-// eslint-disable-next-line @typescript-eslint/no-invalid-void-type
 export type SagaGenerator<RT = void> = SagaIterator<RT> & {
   [Symbol.iterator]: () => SagaGenerator<RT>,
 }
