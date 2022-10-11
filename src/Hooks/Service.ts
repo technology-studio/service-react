@@ -17,8 +17,8 @@ import type {
   ServiceProp,
   ValueOrValueMapper,
   CallAttributes,
+  ServiceResult,
   ServiceErrorException,
-  ServiceCallResult,
 } from '@txo/service-prop'
 
 import { evaluateValue } from '../Api/EvaulatedValueHelper'
@@ -39,13 +39,13 @@ type ServiceDeclaration<
   DATA,
   REDUX_STATE,
   CALL_DATA = undefined,
-  > = {
-    context?: ValueOrValueMapper<string>,
-    validationAttributes?: ValueOrValueMapper<string[] | BooleanMap>,
-    selector: (state: REDUX_STATE) => ContextServiceState<DATA>,
-    // eslint-disable-next-line @typescript-eslint/ban-types
-    redux: ContextServiceRedux<NonNullable<ATTRIBUTES> | {}, DATA, CALL_DATA>,
-  }
+> = {
+  context?: ValueOrValueMapper<string>,
+  validationAttributes?: ValueOrValueMapper<string[] | BooleanMap>,
+  selector: (state: REDUX_STATE) => ContextServiceState<DATA>,
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  redux: ContextServiceRedux<NonNullable<ATTRIBUTES> | {}, DATA, CALL_DATA>,
+}
 
 export const useService = <
   ATTRIBUTES extends Record<string, unknown> | undefined,
@@ -53,7 +53,7 @@ export const useService = <
   CALL_ATTRIBUTES extends CallAttributes<ATTRIBUTES> | undefined,
   REDUX_STATE,
   CALL_DATA = undefined,
-  >(
+>(
     serviceDeclaration: ServiceDeclaration<ATTRIBUTES, DATA, REDUX_STATE, CALL_DATA>,
   ): ServiceProp<ATTRIBUTES, DATA, CALL_ATTRIBUTES, CALL_DATA> => {
   const {
@@ -87,13 +87,29 @@ export const useService = <
   const call = useCallback(async (
     attributes: ATTRIBUTES,
     callAttributes?: CALL_ATTRIBUTES,
-  ): Promise<ServiceCallResult<DATA, CALL_DATA>> => (
+  ): Promise<ServiceResult<ATTRIBUTES, DATA, CALL_ATTRIBUTES, CALL_DATA>> => (
     new Promise((resolve, reject) => {
       const serviceCallResolve = (
         serviceCallResult: PromiseLikeServiceCallResult<DATA, CALL_DATA>,
       ): void => {
         resolve(
-          Promise.resolve(serviceCallResult),
+          Promise.resolve(serviceCallResult).then(({
+            data,
+            callData,
+          }) => ({
+            serviceProp: {
+              data,
+              call,
+              clear,
+              clearException,
+              exception: null,
+              fetching: false,
+              options: { validationAttributes },
+            },
+            attributes,
+            callAttributes,
+            callData,
+          })),
         )
       }
       dispatch(redux.creators.serviceCall(attributes ?? {}, {
@@ -102,7 +118,7 @@ export const useService = <
         context: evaluatedContext + (callAttributes?.context ? `.${callAttributes.context}` : ''),
       }))
     })
-  ), [dispatch, evaluatedContext, redux.creators])
+  ), [clear, clearException, dispatch, evaluatedContext, redux.creators, validationAttributes])
 
   return useMemo<ServiceProp<ATTRIBUTES, DATA, CALL_ATTRIBUTES, CALL_DATA>>(() => ({
     call,
