@@ -87,6 +87,11 @@ type Handlers<DATA, ATTRIBUTES> = {
   clearException: ReduxHandler<ServiceState<DATA>, undefined>,
 }
 
+export type ContextServiceRedux<
+  ATTRIBUTES extends Record<string, unknown>,
+  DATA,
+> = ContextRedux<ServiceState<DATA>, keyof Handlers<DATA, ATTRIBUTES>, Handlers<DATA, ATTRIBUTES>>
+
 export const createContextServiceRedux = <
 ATTRIBUTES extends Record<string, unknown>,
 DATA = undefined,
@@ -94,7 +99,7 @@ DATA = undefined,
     filter?: FilterNode,
     prefix: string,
     resettable?: boolean,
-  }): ContextRedux<ServiceState<DATA>, keyof Handlers<DATA, ATTRIBUTES>, Handlers<DATA, ATTRIBUTES>> => createContextRedux<ServiceState<DATA>, keyof Handlers<DATA, ATTRIBUTES>, Handlers<DATA, ATTRIBUTES>>({
+  }): ContextServiceRedux<ATTRIBUTES, DATA> => createContextRedux<ServiceState<DATA>, keyof Handlers<DATA, ATTRIBUTES>, Handlers<DATA, ATTRIBUTES>>({
     filter: filter ?? defaultFilter,
     initialState: {
       fetching: false,

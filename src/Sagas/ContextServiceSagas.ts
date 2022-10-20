@@ -27,7 +27,7 @@ const log = new Log('txo.react-service.Sagas.ContextServiceSaga')
 export function * contextServiceActionSaga<ATTRIBUTES extends Record<string, unknown>, DATA, SERVICE_ATTRIBUTES, CALL_DATA> (
   serviceCall: (attributes: ATTRIBUTES, serviceAttributes: SERVICE_ATTRIBUTES & { context: string }) => Promise<ServiceCallResult<DATA, CALL_DATA>> | SagaGenerator<ServiceCallResult<DATA, CALL_DATA>>,
   action: ContextServiceAction<ATTRIBUTES, DATA, CALL_DATA>,
-  redux: ContextServiceRedux<ATTRIBUTES, DATA, CALL_DATA>,
+  redux: ContextServiceRedux<ATTRIBUTES, DATA>,
   serviceAttributes: SERVICE_ATTRIBUTES,
   serviceOptions?: ServiceOptions,
 ): SagaGenerator<ServiceCallResult<DATA, CALL_DATA> | null | undefined> {

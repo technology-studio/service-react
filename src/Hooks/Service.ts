@@ -38,13 +38,12 @@ type ServiceDeclaration<
   ATTRIBUTES extends Record<string, unknown> | undefined,
   DATA,
   REDUX_STATE,
-  CALL_DATA = undefined,
   > = {
     context?: ValueOrValueMapper<string>,
     validationAttributes?: ValueOrValueMapper<string[] | BooleanMap>,
     selector: (state: REDUX_STATE) => ContextServiceState<DATA>,
     // eslint-disable-next-line @typescript-eslint/ban-types
-    redux: ContextServiceRedux<NonNullable<ATTRIBUTES> | {}, DATA, CALL_DATA>,
+    redux: ContextServiceRedux<NonNullable<ATTRIBUTES> | {}, DATA>,
   }
 
 export const useService = <
@@ -54,7 +53,7 @@ export const useService = <
   REDUX_STATE,
   CALL_DATA = undefined,
   >(
-    serviceDeclaration: ServiceDeclaration<ATTRIBUTES, DATA, REDUX_STATE, CALL_DATA>,
+    serviceDeclaration: ServiceDeclaration<ATTRIBUTES, DATA, REDUX_STATE>,
   ): ServiceProp<ATTRIBUTES, DATA, CALL_ATTRIBUTES, CALL_DATA> => {
   const {
     context = GLOBAL_CONTEXT,
