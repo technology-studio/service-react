@@ -1307,15 +1307,15 @@
   resolved "https://registry.yarnpkg.com/@txo/config-manager/-/config-manager-3.1.0.tgz#9a38d0ba2b2355f973775bafe884cdbb7225dc0d"
   integrity sha512-rYSd5Mk4URK3hs7Y5nSXst4KOidmjJPeaNkh+D/L1ndVodvKwXO/rZV00VYXpW71/KSaG1Hj83At3r4WmboKvg==
 
-"@txo/context-redux@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@txo/context-redux/-/context-redux-3.0.0.tgz#7ecdaef9b0613f0c46e40054448c1bbfdb3c9465"
-  integrity sha512-zMdoiyIqXH687zorBjAqZ8a57NPgDBu7WESM+VvyJK8p41iLr6xkJQk1flVpum1FOnE4T193lGPyLzAtMH96hg==
+"@txo/context-redux@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@txo/context-redux/-/context-redux-3.0.1.tgz#9d0338df3acf5f230f954a552bb1b878821c3ce5"
+  integrity sha512-mDVxHe0My7HDgBnqTwwUfpNJII35ZaDMdRUQxTUcWSI9m3Xy9r4cUrgIBe5DJpcF/vvpqVRXvDd4FFx07aREgw==
   dependencies:
-    "@txo/functional" "^4.3.0"
-    "@txo/redux" "^4.0.6"
+    "@txo/functional" "^4.5.1"
+    "@txo/redux" "^4.0.7"
 
-"@txo/functional@^4.3.0":
+"@txo/functional@^4.5.1":
   version "4.5.1"
   resolved "https://registry.yarnpkg.com/@txo/functional/-/functional-4.5.1.tgz#7b29b0832d96cf65221c414ed13fd76ead13d113"
   integrity sha512-cbe7Y78O7mgHZqAoS5qcmLlRjF1EAIW7JSNK8gk5DSnKGu4JcFir8R3zPMu/viND6qjWcOmCVP6jsNHh01zJhQ==
@@ -1332,14 +1332,6 @@
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@txo/log/-/log-2.0.1.tgz#fd96044751a9930cf5136a7248ad8989efce756c"
   integrity sha512-CC+ZkiTbytuNVqvusQFdp72i1G2MhA5ITohxEMEi0qGLGIzxtYT20vYkoFRC8XPbsZydbu9uVtpH5wA/X/g/eg==
-
-"@txo/redux@^4.0.6":
-  version "4.0.6"
-  resolved "https://registry.yarnpkg.com/@txo/redux/-/redux-4.0.6.tgz#58ad4464b43d0839e5a2a2d0c412a17d0317acab"
-  integrity sha512-IJA2bWw4jQM3n8aQp+ig+cAqc1TOUY6OFCX6QZ0vhDhUUUMw8xeuf7v6vrYRBE79B/EAxRlV/2ZUdvL3blCCFg==
-  dependencies:
-    constant-case "^3.0.4"
-    redux "^4.0.1"
 
 "@txo/redux@^4.0.7":
   version "4.0.7"
@@ -6598,7 +6590,7 @@ redux-saga@^1.2.1:
   dependencies:
     "@redux-saga/core" "^1.2.1"
 
-redux@^4.0.1, redux@^4.0.4, redux@^4.2.0:
+redux@^4.0.4, redux@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/redux/-/redux-4.2.0.tgz#46f10d6e29b6666df758780437651eeb2b969f13"
   integrity sha512-oSBmcKKIuIR4ME29/AeNUnl5L+hvBq7OaJWzaptTQJAntaPvxIJqfnjbaEiCzzaIz+XmVILfqAM3Ob0aXLPfjA==
