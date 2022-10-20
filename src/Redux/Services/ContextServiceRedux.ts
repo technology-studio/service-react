@@ -79,27 +79,22 @@ export type ContextServiceActionCreators <ATTRIBUTES extends Record<string, unkn
   clearException: ContextActionCreator<undefined, ContextServiceActionAttributes>,
 }
 
-export type ContextServiceRedux<
-  ATTRIBUTES extends Record<string, unknown>,
-  DATA,
-  CALL_DATA,
-> = ContextRedux<ServiceState<DATA>, ContextServiceActionCreators<ATTRIBUTES, DATA, CALL_DATA>>
+type Handlers<DATA, ATTRIBUTES> = {
+  serviceCall: ReduxHandler<ServiceState<DATA>, ATTRIBUTES>,
+  serviceSuccess: ReduxHandler<ServiceState<DATA>, ContextServiceSuccessAttributes<DATA>>,
+  serviceFailure: ReduxHandler<ServiceState<DATA>, ContextServiceFailureAttributes>,
+  serviceClear: ReduxHandler<ServiceState<DATA>, undefined>,
+  clearException: ReduxHandler<ServiceState<DATA>, undefined>,
+}
 
 export const createContextServiceRedux = <
 ATTRIBUTES extends Record<string, unknown>,
 DATA = undefined,
-CALL_DATA = undefined,
 >({ filter, prefix, resettable }: {
     filter?: FilterNode,
     prefix: string,
     resettable?: boolean,
-  }): ContextServiceRedux<ATTRIBUTES, DATA, CALL_DATA> => createContextRedux<ServiceState<DATA>, {
-    serviceCall: ReduxHandler<ServiceState<DATA>, ATTRIBUTES>,
-    serviceSuccess: ReduxHandler<ServiceState<DATA>, ContextServiceSuccessAttributes<DATA>>,
-    serviceFailure: ReduxHandler<ServiceState<DATA>, ContextServiceFailureAttributes>,
-    serviceClear: ReduxHandler<ServiceState<DATA>, undefined>,
-    clearException: ReduxHandler<ServiceState<DATA>, undefined>,
-  }>({
+  }): ContextRedux<ServiceState<DATA>, keyof Handlers<DATA, ATTRIBUTES>, Handlers<DATA, ATTRIBUTES>> => createContextRedux<ServiceState<DATA>, keyof Handlers<DATA, ATTRIBUTES>, Handlers<DATA, ATTRIBUTES>>({
     filter: filter ?? defaultFilter,
     initialState: {
       fetching: false,

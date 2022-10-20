@@ -6,33 +6,24 @@
 
 import type {
   Redux,
-  ActionCreator,
   ReduxHandler,
 } from '@txo/redux'
 import {
   createRedux,
 } from '@txo/redux'
 
-import type { ServicePromiseHandlers } from '../../Model/Types'
-
 // eslint-disable-next-line @typescript-eslint/ban-types
 type AsyncState = {}
 
-export type AsyncServiceCallAttributes<DATA, CALL_DATA> = {
-  promiseHandlers?: ServicePromiseHandlers<DATA, CALL_DATA>,
+type Handlers<DATA, ATTRIBUTES> = {
+  serviceCall: ReduxHandler<DATA, ATTRIBUTES>,
 }
 
-export type AsyncServiceActionCreators <ATTRIBUTES, DATA, CALL_DATA> = {
-  serviceCall: ActionCreator<ATTRIBUTES, AsyncServiceCallAttributes<DATA, CALL_DATA> | undefined>,
-}
+export type AsyncServiceRedux<ATTRIBUTES> = Redux<AsyncState, AsyncState, keyof Handlers<AsyncState, ATTRIBUTES>, Handlers<AsyncState, ATTRIBUTES>>
 
-export type AsyncServiceRedux<ATTRIBUTES, DATA, CALL_DATA> = Redux<AsyncState, AsyncServiceActionCreators<ATTRIBUTES, DATA, CALL_DATA>>
-
-export const createAsyncServiceRedux = <ATTRIBUTES, DATA, CALL_DATA=undefined>(
+export const createAsyncServiceRedux = <ATTRIBUTES>(
   prefix: string,
-): AsyncServiceRedux<ATTRIBUTES, DATA, CALL_DATA> => createRedux<AsyncState, {
-    serviceCall: ReduxHandler<AsyncState, ATTRIBUTES>,
-  }>({
+): AsyncServiceRedux<ATTRIBUTES> => createRedux<AsyncState, keyof Handlers<AsyncState, ATTRIBUTES>, Handlers<AsyncState, ATTRIBUTES>>({
     filter: '*',
     initialState: {
     },
