@@ -1,3 +1,10 @@
+## [5.0.6](https://github.com/technology-studio/service-react/compare/v5.0.5...v5.0.6) (2022-10-27)
+
+
+### Bug fixes
+
+* fix package.json ([#41](https://github.com/technology-studio/service-react/issues/41)) ([22b88eb](https://github.com/technology-studio/service-react/commit/22b88eb9efadb03afb28e69052305c0757b9dcbb))
+
 ## [5.0.5](https://github.com/technology-studio/service-react/compare/v5.0.4...v5.0.5) (2022-10-26)
 
 
