@@ -37,7 +37,7 @@
     "@txo/context-redux": "^3.0.3",
     "@txo/log": "^2.0.1",
     "@txo/redux": "^4.0.9",
-    "@txo/service-prop": "^2.2.1",
+    "@txo/service-prop": "^2.2.2",
     "lodash.get": "^4.4.2"
   },
   "peerDependencies": {
@@ -52,7 +52,7 @@
     "@semantic-release/git": "^10.0.1",
     "@txo-peer-dep/log": "^4.0.0",
     "@txo/log-console": "^3.0.0",
-    "@txo/service-prop": "^2.2.1",
+    "@txo/service-prop": "^2.2.2",
     "@types/jest": "^29.2.0",
     "@types/lodash.get": "^4.4.7",
     "@types/react": "^18.0.23",
