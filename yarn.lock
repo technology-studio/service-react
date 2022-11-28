@@ -1377,6 +1377,15 @@
   resolved "https://registry.yarnpkg.com/@txo/log/-/log-2.0.1.tgz#fd96044751a9930cf5136a7248ad8989efce756c"
   integrity sha512-CC+ZkiTbytuNVqvusQFdp72i1G2MhA5ITohxEMEi0qGLGIzxtYT20vYkoFRC8XPbsZydbu9uVtpH5wA/X/g/eg==
 
+"@txo/redux@^4.0.10":
+  version "4.0.10"
+  resolved "https://registry.yarnpkg.com/@txo/redux/-/redux-4.0.10.tgz#badaa842b7236165e3a7e83717a599472fef8af5"
+  integrity sha512-1Lk6yxUUkcGl194sOjYyjqP9U8q5B6ec+id3qDBExCyizB+Ztg16UM+aAHhmsG2jU0tBKTVSm7bTI7lBw7Uo2A==
+  dependencies:
+    "@txo/functional" "^4.5.2"
+    constant-case "^3.0.4"
+    redux "^4.2.0"
+
 "@txo/redux@^4.0.9":
   version "4.0.9"
   resolved "https://registry.yarnpkg.com/@txo/redux/-/redux-4.0.9.tgz#f36a0820935660ef14cfaedb5163867a4d7ef51c"
