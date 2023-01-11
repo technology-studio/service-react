@@ -3131,10 +3131,10 @@ eslint-config-standard@17.0.0:
   resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-17.0.0.tgz#fd5b6cf1dcf6ba8d29f200c461de2e19069888cf"
   integrity sha512-/2ks1GKyqSOkH7JFvXJicu0iMpoojkwB+f5Du/1SC0PtBL+s8v30k9njRZ21pm2drKYm2342jFnGWzttxPmZVg==
 
-eslint-config-txo-typescript-react@^1.0.48:
-  version "1.0.48"
-  resolved "https://registry.yarnpkg.com/eslint-config-txo-typescript-react/-/eslint-config-txo-typescript-react-1.0.48.tgz#c45f0752c697d9f7e51793bc2c86d54dd4b352d0"
-  integrity sha512-idZsQZD6Qp5m8OIyTdiKwYkVcjlPxdQbrwgGHsfBTHb4SIT95TyU2iJtza9PPz91JY+tT68pCgf2ya6ZOBh84g==
+eslint-config-txo-typescript-react@^1.0.49:
+  version "1.0.49"
+  resolved "https://registry.yarnpkg.com/eslint-config-txo-typescript-react/-/eslint-config-txo-typescript-react-1.0.49.tgz#57bcaac04410c3bcaffe4de3bc1e25d275aa60c7"
+  integrity sha512-ToygktleBbJpwuzM2lojtXZTPNGDhLI4uWuROYMPBrCgtJrV97cBWrO0XJJWXukieBjmFe5fRpdAn/i4yMf/OA==
   dependencies:
     eslint-config-txo-typescript "^3.1.73"
 
