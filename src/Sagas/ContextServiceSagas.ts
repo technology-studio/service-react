@@ -20,7 +20,10 @@ import type {
   SagaGenerator,
 } from '../Model/Types'
 
-import { processServiceErrorSaga } from './ProcessServiceErrorSaga'
+import {
+  type ProcessServiceErrorResult,
+  processServiceErrorSaga,
+} from './ProcessServiceErrorSaga'
 
 const log = new Log('txo.react-service.Sagas.ContextServiceSaga')
 
@@ -41,19 +44,19 @@ export function * contextServiceActionSaga<ATTRIBUTES extends Record<string, unk
       })
       const { data } = serviceCallResult
       yield put(redux.creators.serviceSuccess({ data }, { context }))
-      if (promiseHandlers) {
+      if (promiseHandlers != null) {
         yield call(promiseHandlers.resolve, serviceCallResult)
       }
       return serviceCallResult
     } catch (errorOrServiceErrorException) {
       log.debug('EXCEPTION')
       if (isServiceErrorException(errorOrServiceErrorException)) {
-        const result = yield call(processServiceErrorSaga, { serviceErrorException: errorOrServiceErrorException })
-        if (result?.retryCall) {
+        const result: ProcessServiceErrorResult | undefined = yield call(processServiceErrorSaga, { serviceErrorException: errorOrServiceErrorException })
+        if (result?.retryCall ?? false) {
           continue
         }
         yield put(redux.creators.serviceFailure({ exception: errorOrServiceErrorException }, { context }))
-        if (promiseHandlers) {
+        if (promiseHandlers != null) {
           yield call(promiseHandlers.reject, errorOrServiceErrorException)
         }
         return

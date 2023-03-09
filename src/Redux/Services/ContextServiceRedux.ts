@@ -32,7 +32,7 @@ export type ServiceState<DATA> = {
 export type ContextServiceState<DATA = undefined> = ContextState<ServiceState<DATA>>
 
 const defaultFilter = <DATA>(contextServiceReduxState: ContextServiceState<DATA>): ContextServiceState<DATA> => {
-  if (contextServiceReduxState) {
+  if (contextServiceReduxState != null) {
     const _contextServiceReduxState: Record<string, unknown> = contextServiceReduxState
     if (typeof _contextServiceReduxState.fetching === 'boolean') {
       return (_contextServiceReduxState.data !== undefined

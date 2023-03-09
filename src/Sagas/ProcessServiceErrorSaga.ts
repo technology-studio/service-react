@@ -24,7 +24,7 @@ type ProcessServiceErrorAttributes = {
   serviceOptions?: ServiceOptions,
 }
 
-type ProcessServiceErrorResult = {
+export type ProcessServiceErrorResult = {
   retryCall?: boolean,
 }
 
@@ -35,7 +35,7 @@ export function * processServiceErrorSaga (
 
   if (serviceErrorList.some(({ key }) => key === ServiceErrorKey.NETWORK_ERROR)) {
     log.debug('NETWORK ERROR')
-    if (serviceOptions?.retryUntilOnlinePeriod) {
+    if (serviceOptions?.retryUntilOnlinePeriod != null && serviceOptions.retryUntilOnlinePeriod > 0) {
       const retryUntilOnlinePeriod = serviceOptions.retryUntilOnlinePeriod
       yield race({
         delay: delay(retryUntilOnlinePeriod),

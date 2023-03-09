@@ -20,6 +20,7 @@ import type {
   ServiceErrorException,
   ServiceCallResult,
 } from '@txo/service-prop'
+import { isNotEmptyString } from '@txo/functional'
 
 import { evaluateValue } from '../Api/EvaulatedValueHelper'
 import type {
@@ -70,7 +71,7 @@ export const useService = <
     (callContext?: string) => dispatch(
       redux.creators.serviceClear(
         undefined,
-        { context: evaluatedContext + (callContext ? `.${callContext}` : '') },
+        { context: evaluatedContext + ((isNotEmptyString(callContext)) ? `.${callContext}` : '') },
       ),
     ), [dispatch, evaluatedContext, redux.creators])
 
@@ -87,7 +88,7 @@ export const useService = <
     attributes: ATTRIBUTES,
     callAttributes?: CALL_ATTRIBUTES,
   ): Promise<ServiceCallResult<DATA, CALL_DATA>> => (
-    new Promise((resolve, reject) => {
+    await new Promise((resolve, reject) => {
       const serviceCallResolve = (
         serviceCallResult: PromiseLikeServiceCallResult<DATA, CALL_DATA>,
       ): void => {
@@ -98,7 +99,7 @@ export const useService = <
       dispatch(redux.creators.serviceCall(attributes ?? {}, {
         promiseHandlers: { resolve: serviceCallResolve, reject },
 
-        context: evaluatedContext + (callAttributes?.context ? `.${callAttributes.context}` : ''),
+        context: evaluatedContext + (callAttributes != null && isNotEmptyString(callAttributes.context) ? `.${callAttributes.context}` : ''),
       }))
     })
   ), [dispatch, evaluatedContext, redux.creators])
