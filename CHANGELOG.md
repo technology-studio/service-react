@@ -1,3 +1,10 @@
+## [5.0.14](https://github.com/technology-studio/service-react/compare/v5.0.13...v5.0.14) (2023-03-17)
+
+
+### Bug fixes
+
+* **deps:** update dependency redux-saga to ^1.2.3 ([4029340](https://github.com/technology-studio/service-react/commit/4029340f69ec96f8afecdd5915bc3811cff8c77d))
+
 ## [5.0.13](https://github.com/technology-studio/service-react/compare/v5.0.12...v5.0.13) (2023-03-08)
 
 
