@@ -33,7 +33,7 @@ export function * processServiceErrorSaga (
 ): SagaGenerator<ProcessServiceErrorResult | undefined> {
   const { serviceErrorException: { serviceErrorList }, serviceOptions } = attributes
 
-  if (serviceErrorList.some(({ key }) => key === ServiceErrorKey.NETWORK_ERROR)) {
+  if (serviceErrorList.some(({ key }) => key as ServiceErrorKey === ServiceErrorKey.NETWORK_ERROR)) {
     log.debug('NETWORK ERROR')
     if (serviceOptions?.retryUntilOnlinePeriod != null && serviceOptions.retryUntilOnlinePeriod > 0) {
       const retryUntilOnlinePeriod = serviceOptions.retryUntilOnlinePeriod
