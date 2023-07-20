@@ -68,12 +68,14 @@ export const useService = <
   const { data, fetching, exception } = selectContextServiceState(contextServiceState, evaluatedContext)
 
   const clear = useCallback(
-    (callContext?: string) => dispatch(
-      redux.creators.serviceClear(
-        undefined,
-        { context: evaluatedContext + ((isNotEmptyString(callContext)) ? `.${callContext}` : '') },
-      ),
-    ), [dispatch, evaluatedContext, redux.creators])
+    (callContext?: string) => {
+      dispatch(
+        redux.creators.serviceClear(
+          undefined,
+          { context: evaluatedContext + ((isNotEmptyString(callContext)) ? `.${callContext}` : '') },
+        ),
+      )
+    }, [dispatch, evaluatedContext, redux.creators])
 
   const clearException = useCallback((serviceErrorException: ServiceErrorException) => {
     dispatch(

@@ -38,10 +38,10 @@ export function * contextServiceActionSaga<ATTRIBUTES extends Record<string, unk
   while (true) {
     try {
       log.debug('CALL', { action, serviceAttributes, serviceOptions })
-      const serviceCallResult: ServiceCallResult<DATA, CALL_DATA> = yield call(serviceCall, attributes, {
+      const serviceCallResult = (yield call(serviceCall, attributes, {
         ...serviceAttributes,
         context: action.context,
-      })
+      })) as ServiceCallResult<DATA, CALL_DATA>
       const { data } = serviceCallResult
       yield put(redux.creators.serviceSuccess({ data }, { context }))
       if (promiseHandlers != null) {
@@ -51,7 +51,7 @@ export function * contextServiceActionSaga<ATTRIBUTES extends Record<string, unk
     } catch (errorOrServiceErrorException) {
       log.debug('EXCEPTION')
       if (isServiceErrorException(errorOrServiceErrorException)) {
-        const result: ProcessServiceErrorResult | undefined = yield call(processServiceErrorSaga, { serviceErrorException: errorOrServiceErrorException })
+        const result = (yield call(processServiceErrorSaga, { serviceErrorException: errorOrServiceErrorException })) as ProcessServiceErrorResult | undefined
         if (result?.retryCall ?? false) {
           continue
         }
