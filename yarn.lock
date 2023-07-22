@@ -1576,6 +1576,13 @@
   dependencies:
     "@txo/functional" "^4.6.4"
 
+"@txo/log@^2.0.6":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@txo/log/-/log-2.0.6.tgz#eae342aafbecce8bba80deb6d6f8e70dc9688a6a"
+  integrity sha512-0za8BU9sBwT4ITWmHyAtLDIPq93U4sVCOAC6DlPjaRmDaPE7TdEwFnAzmcCze4v5YMi0x6GNKPCj4g2HBUnLgw==
+  dependencies:
+    "@txo/functional" "^4.6.5"
+
 "@txo/redux@^4.0.12":
   version "4.0.12"
   resolved "https://registry.yarnpkg.com/@txo/redux/-/redux-4.0.12.tgz#fb462b30ab135360de2232f1780a0f31574915c9"
