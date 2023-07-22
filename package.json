@@ -34,7 +34,7 @@
     "update-boilerplate-version": "./scripts/update-boilerplate-version.sh"
   },
   "dependencies": {
-    "@txo/context-redux": "^3.0.8",
+    "@txo/context-redux": "^3.0.15",
     "@txo/functional": "^4.6.5",
     "@txo/log": "^2.0.5",
     "@txo/redux": "^4.0.12",
