@@ -1505,12 +1505,12 @@
   resolved "https://registry.yarnpkg.com/@txo/config-manager/-/config-manager-3.1.0.tgz#9a38d0ba2b2355f973775bafe884cdbb7225dc0d"
   integrity sha512-rYSd5Mk4URK3hs7Y5nSXst4KOidmjJPeaNkh+D/L1ndVodvKwXO/rZV00VYXpW71/KSaG1Hj83At3r4WmboKvg==
 
-"@txo/context-redux@^3.0.19":
-  version "3.0.19"
-  resolved "https://registry.yarnpkg.com/@txo/context-redux/-/context-redux-3.0.19.tgz#f7ae7ebfd7241b3a16e56413b686bf10c7088a47"
-  integrity sha512-7/xCgBja1hm1bhmDBEwi5KLPsGXAk8eU4+DGEejC2RD9gFDxNEn2tyiZUG+KE9d84BxU0ySTbRBS5HXiEt+PHw==
+"@txo/context-redux@^3.0.20":
+  version "3.0.20"
+  resolved "https://registry.yarnpkg.com/@txo/context-redux/-/context-redux-3.0.20.tgz#13d167f34cb790c0b59fc5ddc2d4b7f89870ed04"
+  integrity sha512-Cn3NPKf3bA8bbnvzxvp1a0Q+dmfYHJqIbTaIU7yQm/PbWFi1GrfDsNHY0czKMHZXky/9bpJxgGAp74nWe6KXOw==
   dependencies:
-    "@txo/functional" "^4.6.9"
+    "@txo/functional" "^4.6.10"
     "@txo/redux" "^4.0.12"
 
 "@txo/functional@^4.6.0":
