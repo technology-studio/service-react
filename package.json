@@ -1,6 +1,6 @@
 {
   "name": "@txo/service-react",
-  "version": "5.0.34",
+  "version": "5.0.35",
   "description": "Technology Studio - Service react",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
