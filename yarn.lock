@@ -1665,6 +1665,15 @@
     constant-case "^3.0.4"
     redux "^4.2.1"
 
+"@txo/redux@^4.0.23":
+  version "4.0.23"
+  resolved "https://registry.yarnpkg.com/@txo/redux/-/redux-4.0.23.tgz#2d05a03e92238ecb378b577c005ca2bf445bf780"
+  integrity sha512-/n7iicue46GTe9JgQpBbqODZ3KsuY3yjsmyfG561gIejRQlr8f4iyzUW7954tIca7AC5pGZ4Dy4fZQacHgn2fw==
+  dependencies:
+    "@txo/functional" "^4.6.10"
+    constant-case "^3.0.4"
+    redux "^4.2.1"
+
 "@txo/service-prop@^2.2.10":
   version "2.2.10"
   resolved "https://registry.yarnpkg.com/@txo/service-prop/-/service-prop-2.2.10.tgz#2725cef5c7c47b434777901cf0a5539302df2f5c"
