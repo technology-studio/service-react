@@ -1529,6 +1529,14 @@
     "@txo/log" "^2.0.10"
     utility-types "^3.10.0"
 
+"@txo/functional@^4.6.11":
+  version "4.6.11"
+  resolved "https://registry.yarnpkg.com/@txo/functional/-/functional-4.6.11.tgz#0e29b73c6c5ba501dbe00a7f781b62bf90e07809"
+  integrity sha512-WbQdvBQUbe0ythYQ5/EcvTc2qPTTeLuN0f1T/XrJB5eV4KJN+ZjkSMk3fnQX+aM125NLSvdYLDufKhj7kod9Dw==
+  dependencies:
+    "@txo/log" "^2.0.12"
+    utility-types "^3.10.0"
+
 "@txo/functional@^4.6.2", "@txo/functional@^4.6.3":
   version "4.6.3"
   resolved "https://registry.yarnpkg.com/@txo/functional/-/functional-4.6.3.tgz#280fa88ffa002176a685e31094685f125f604c1d"
@@ -1674,12 +1682,12 @@
     constant-case "^3.0.4"
     redux "^4.2.1"
 
-"@txo/service-prop@^2.2.10":
-  version "2.2.10"
-  resolved "https://registry.yarnpkg.com/@txo/service-prop/-/service-prop-2.2.10.tgz#2725cef5c7c47b434777901cf0a5539302df2f5c"
-  integrity sha512-o6YNIYWY7gLbMDucjQOLwLV3KLUJG40iMTv+6hnCdX7z64APlaPIHTrcd+SVeOZnZ27zvgorKx6IUDu/N8nXlA==
+"@txo/service-prop@^2.2.11":
+  version "2.2.11"
+  resolved "https://registry.yarnpkg.com/@txo/service-prop/-/service-prop-2.2.11.tgz#97e4451e41ea272d144560366a93662246ff9d3a"
+  integrity sha512-FsFhUhr13kqKX4OWMd+wA0dzsUof5bsBUa+xL2pAQFFGd0EkmWizwsscakWlLsz7RRvLhPW01xH6uYFzUYPwuA==
   dependencies:
-    "@txo/functional" "^4.6.10"
+    "@txo/functional" "^4.6.11"
 
 "@types/babel__core@^7.1.14":
   version "7.1.19"
