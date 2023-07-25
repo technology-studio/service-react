@@ -1505,21 +1505,13 @@
   resolved "https://registry.yarnpkg.com/@txo/config-manager/-/config-manager-3.1.0.tgz#9a38d0ba2b2355f973775bafe884cdbb7225dc0d"
   integrity sha512-rYSd5Mk4URK3hs7Y5nSXst4KOidmjJPeaNkh+D/L1ndVodvKwXO/rZV00VYXpW71/KSaG1Hj83At3r4WmboKvg==
 
-"@txo/context-redux@^3.0.20":
-  version "3.0.20"
-  resolved "https://registry.yarnpkg.com/@txo/context-redux/-/context-redux-3.0.20.tgz#13d167f34cb790c0b59fc5ddc2d4b7f89870ed04"
-  integrity sha512-Cn3NPKf3bA8bbnvzxvp1a0Q+dmfYHJqIbTaIU7yQm/PbWFi1GrfDsNHY0czKMHZXky/9bpJxgGAp74nWe6KXOw==
+"@txo/context-redux@^3.0.23":
+  version "3.0.23"
+  resolved "https://registry.yarnpkg.com/@txo/context-redux/-/context-redux-3.0.23.tgz#65bae1e0b04e6d06ba4b2287410ab3f1888db7de"
+  integrity sha512-Jrcr97Lhc5X1asZ+3kMhcLc8pIRybV0C2H6924s1Ll4u7/L4KwxMnoL+scdvkdveDIxWwK9X2UwcjY45sivT0w==
   dependencies:
-    "@txo/functional" "^4.6.10"
-    "@txo/redux" "^4.0.12"
-
-"@txo/functional@^4.6.0":
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/@txo/functional/-/functional-4.6.0.tgz#52e8263ac49dc2982d6384eb0583335c1c1e567f"
-  integrity sha512-RXTZBhGINB/4omav8ARje1r6f785d6rwd4V1q+yRFLrbxhKKAFhC6AF7AyVyFScJJB/rLaRppFbCXuC4I4Xl6w==
-  dependencies:
-    "@txo/log" "^2.0.1"
-    utility-types "^3.10.0"
+    "@txo/functional" "^4.6.11"
+    "@txo/redux" "^4.0.24"
 
 "@txo/functional@^4.6.10":
   version "4.6.10"
@@ -1598,11 +1590,6 @@
   resolved "https://registry.yarnpkg.com/@txo/log-console/-/log-console-3.0.0.tgz#56506a8c6afea9109301ff96520c43815814022d"
   integrity sha512-Dl7dnPMUXRr1JSBysUmzT9/RjMm9FWJdtZ9CXVnh9K4qwpT4fnjDV+GWiHHWAqob47XcE7N98M8rShGmpsukqg==
 
-"@txo/log@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@txo/log/-/log-2.0.1.tgz#fd96044751a9930cf5136a7248ad8989efce756c"
-  integrity sha512-CC+ZkiTbytuNVqvusQFdp72i1G2MhA5ITohxEMEi0qGLGIzxtYT20vYkoFRC8XPbsZydbu9uVtpH5wA/X/g/eg==
-
 "@txo/log@^2.0.10":
   version "2.0.10"
   resolved "https://registry.yarnpkg.com/@txo/log/-/log-2.0.10.tgz#20fa29d5d20481dec88eed7b5f45cf7f6741d249"
@@ -1664,21 +1651,21 @@
   dependencies:
     "@txo/functional" "^4.6.8"
 
-"@txo/redux@^4.0.12":
-  version "4.0.12"
-  resolved "https://registry.yarnpkg.com/@txo/redux/-/redux-4.0.12.tgz#fb462b30ab135360de2232f1780a0f31574915c9"
-  integrity sha512-9AmhgN+qEitVmjuOhZExotkJwK/ZPvb7bX+6uik6La1gJB1zaRCAlKfk+5vfMf9EPBYXfTdtxnToeZMcR073kQ==
-  dependencies:
-    "@txo/functional" "^4.6.0"
-    constant-case "^3.0.4"
-    redux "^4.2.1"
-
 "@txo/redux@^4.0.23":
   version "4.0.23"
   resolved "https://registry.yarnpkg.com/@txo/redux/-/redux-4.0.23.tgz#2d05a03e92238ecb378b577c005ca2bf445bf780"
   integrity sha512-/n7iicue46GTe9JgQpBbqODZ3KsuY3yjsmyfG561gIejRQlr8f4iyzUW7954tIca7AC5pGZ4Dy4fZQacHgn2fw==
   dependencies:
     "@txo/functional" "^4.6.10"
+    constant-case "^3.0.4"
+    redux "^4.2.1"
+
+"@txo/redux@^4.0.24":
+  version "4.0.24"
+  resolved "https://registry.yarnpkg.com/@txo/redux/-/redux-4.0.24.tgz#f504fe6a0700da98408b27e1c92ceb20281d9e05"
+  integrity sha512-tTdvq1G6tlpkcKy0H7qC4TWtCH02VkMFEq6sec2nufqLDElB9+IBOzlTi3rLRWY96E5XO0youF3KsgQ4g9u7Kw==
+  dependencies:
+    "@txo/functional" "^4.6.11"
     constant-case "^3.0.4"
     redux "^4.2.1"
 
