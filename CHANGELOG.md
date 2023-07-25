@@ -1,3 +1,10 @@
+## [5.0.40](https://github.com/technology-studio/service-react/compare/v5.0.39...v5.0.40) (2023-07-25)
+
+
+### Bug fixes
+
+* **deps:** update dependency @txo/context-redux to ^3.0.23 ([f37feec](https://github.com/technology-studio/service-react/commit/f37feec2445906bcc768071fa5708ccbd47141c2))
+
 ## [5.0.39](https://github.com/technology-studio/service-react/compare/v5.0.38...v5.0.39) (2023-07-24)
 
 
