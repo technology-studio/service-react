@@ -1,3 +1,10 @@
+## [5.0.43](https://github.com/technology-studio/service-react/compare/v5.0.42...v5.0.43) (2023-07-29)
+
+
+### Bug fixes
+
+* **deps:** update dependency react-redux to ^8.1.2 ([1eca861](https://github.com/technology-studio/service-react/commit/1eca8615baf498e916fa9f1c00f6c47bb07cfe6f))
+
 ## [5.0.42](https://github.com/technology-studio/service-react/compare/v5.0.41...v5.0.42) (2023-07-25)
 
 
