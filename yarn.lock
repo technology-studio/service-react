@@ -1536,12 +1536,12 @@
     constant-case "^3.0.4"
     redux "^4.2.1"
 
-"@txo/service-prop@^2.2.11":
-  version "2.2.11"
-  resolved "https://registry.yarnpkg.com/@txo/service-prop/-/service-prop-2.2.11.tgz#97e4451e41ea272d144560366a93662246ff9d3a"
-  integrity sha512-FsFhUhr13kqKX4OWMd+wA0dzsUof5bsBUa+xL2pAQFFGd0EkmWizwsscakWlLsz7RRvLhPW01xH6uYFzUYPwuA==
+"@txo/service-prop@^2.2.12":
+  version "2.2.12"
+  resolved "https://registry.yarnpkg.com/@txo/service-prop/-/service-prop-2.2.12.tgz#d8ee194bb70573d2f39060744470474a26dd84d2"
+  integrity sha512-31QQWd9DlQzH5+FXw+d0WNK200YAVhlusrk6M1ktadNiCuX75mve7zR8ItEGSE7uqw75l/0uBsiECypcBNrWhQ==
   dependencies:
-    "@txo/functional" "^4.6.11"
+    "@txo/functional" "^4.6.12"
 
 "@types/babel__core@^7.1.14":
   version "7.1.19"
