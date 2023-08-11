@@ -1,3 +1,10 @@
+## [5.0.46](https://github.com/technology-studio/service-react/compare/v5.0.45...v5.0.46) (2023-08-11)
+
+
+### Bug fixes
+
+* **deps:** update dependency @txo/redux to ^4.0.25 ([4622bb7](https://github.com/technology-studio/service-react/commit/4622bb7ab7e83d0338d1cfaa8e1ee2ae476c60b4))
+
 ## [5.0.45](https://github.com/technology-studio/service-react/compare/v5.0.44...v5.0.45) (2023-08-10)
 
 
