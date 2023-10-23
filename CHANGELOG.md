@@ -1,3 +1,31 @@
+## [5.0.50](https://github.com/technology-studio/service-react/compare/v5.0.49...v5.0.50) (2023-10-02)
+
+
+### Bug fixes
+
+* **deps:** update dependency @txo/redux to ^4.0.27 ([af17ece](https://github.com/technology-studio/service-react/commit/af17ecef4f05e580f6277232fe937e47721424eb))
+
+## [5.0.49](https://github.com/technology-studio/service-react/compare/v5.0.48...v5.0.49) (2023-10-02)
+
+
+### Bug fixes
+
+* **deps:** update dependency @txo/log to ^2.0.13 ([49709dc](https://github.com/technology-studio/service-react/commit/49709dc3eb9164b54dc10a4566afea5ff2adbe4c))
+
+## [5.0.48](https://github.com/technology-studio/service-react/compare/v5.0.47...v5.0.48) (2023-10-02)
+
+
+### Bug fixes
+
+* **deps:** update dependency @txo/functional to ^4.6.15 ([b2be370](https://github.com/technology-studio/service-react/commit/b2be370b3b6762853a36a6d8873d1f78c82f1bbd))
+
+## [5.0.47](https://github.com/technology-studio/service-react/compare/v5.0.46...v5.0.47) (2023-10-02)
+
+
+### Bug fixes
+
+* **deps:** update dependency @txo/context-redux to ^3.0.30 ([b025878](https://github.com/technology-studio/service-react/commit/b025878ad991c828472306355205426971bce2ad))
+
 ## [5.0.46](https://github.com/technology-studio/service-react/compare/v5.0.45...v5.0.46) (2023-08-11)
 
 
