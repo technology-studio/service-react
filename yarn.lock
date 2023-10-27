@@ -3576,10 +3576,10 @@ eslint-config-standard@17.1.0:
   resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-17.1.0.tgz#40ffb8595d47a6b242e07cbfd49dc211ed128975"
   integrity sha512-IwHwmaBNtDK4zDHQukFDW5u/aTb8+meQWZvNFWkiGmbWjD6bqyuSSBxxXKkCftCUzc1zwCH2m/baCNDLGmuO5Q==
 
-eslint-config-txo-typescript-react@^1.2.59:
-  version "1.2.59"
-  resolved "https://registry.yarnpkg.com/eslint-config-txo-typescript-react/-/eslint-config-txo-typescript-react-1.2.59.tgz#e9f237e42ebce93a4f6011e8c90f213cec37b6de"
-  integrity sha512-rqr8Aggo1CHn34D8xo/iMNOyQFyMOia1u3swxiebw/zYLe7LnBlgpOFrtA8qXAoWyKg0XyyDYVGvMeg+Th9ZPA==
+eslint-config-txo-typescript-react@^1.2.60:
+  version "1.2.60"
+  resolved "https://registry.yarnpkg.com/eslint-config-txo-typescript-react/-/eslint-config-txo-typescript-react-1.2.60.tgz#3b6a984927f478c82191156b1a01d5e9af23d51f"
+  integrity sha512-kLOk2gv00tvVEwD4Zm2vZLEc8+rA02ODFcc1cRV8VTmbQpK5vPJJObBMsl8t9+YkOLiHXGVqiU64RosSBUroeA==
   dependencies:
     eslint-config-txo-typescript "^3.4.0"
 
