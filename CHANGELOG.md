@@ -1,3 +1,10 @@
+## [5.1.0](https://github.com/technology-studio/service-react/compare/v5.0.50...v5.1.0) (2023-11-10)
+
+
+### Features
+
+* migrate to flat eslint config ([#501](https://github.com/technology-studio/service-react/issues/501)) ([b5d8cd0](https://github.com/technology-studio/service-react/commit/b5d8cd0aebd497e2bb7b57a923dab79977b9be26))
+
 ## [5.0.50](https://github.com/technology-studio/service-react/compare/v5.0.49...v5.0.50) (2023-10-02)
 
 
