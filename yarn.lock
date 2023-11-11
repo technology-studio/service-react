@@ -1516,12 +1516,12 @@
   resolved "https://registry.yarnpkg.com/@txo/config-manager/-/config-manager-3.2.0.tgz#d6bf817d0b8fa2eece61f79fc99eedf2516d68b1"
   integrity sha512-P4t09H/Q6AHoyps0jBy5tSp/HruQteyUeoxr758D2entD+rd8f0XXAdcrCCEIBeihlNAkv4MVj/n8bJulw5CLg==
 
-"@txo/context-redux@^3.0.31":
-  version "3.0.31"
-  resolved "https://registry.yarnpkg.com/@txo/context-redux/-/context-redux-3.0.31.tgz#2fd0c164a964019f683aea864fd9bc7da0fb4f08"
-  integrity sha512-O1aGU18YbRnDphoFhw3Gup9YnvQPToCO1khIINs6M5DJQs0nWbqJBBAtzqJuv36Qa78onV0Wb2/mrkIhIipMRg==
+"@txo/context-redux@^3.0.32":
+  version "3.0.32"
+  resolved "https://registry.yarnpkg.com/@txo/context-redux/-/context-redux-3.0.32.tgz#4989596757a6dcc083feb07890480804cfa4604e"
+  integrity sha512-L3rW2Ep8AVEr3omhpzXkM76+2FFtmIjq6mjl0yAp6weKWNtXkAa5Tf2LJPoiM6D0oALp/9B0huUvlP8C44r/1w==
   dependencies:
-    "@txo/functional" "^4.6.15"
+    "@txo/functional" "^4.6.17"
     "@txo/redux" "^4.0.27"
 
 "@txo/functional@^4.6.15":
@@ -1540,6 +1540,14 @@
     "@txo/log" "^2.0.13"
     utility-types "^3.10.0"
 
+"@txo/functional@^4.6.17":
+  version "4.6.17"
+  resolved "https://registry.yarnpkg.com/@txo/functional/-/functional-4.6.17.tgz#6524b8850e7ff7e593d07b3ffa376910572e90b7"
+  integrity sha512-n+V7CQseye5rm6UqQfHXCxkyP57Nld/ZSUy8GIb0W4iBKW/hta498uA+ZvWpsrzZfQObjCCDVJQbq4RHRWnSNQ==
+  dependencies:
+    "@txo/log" "^2.0.14"
+    utility-types "^3.10.0"
+
 "@txo/log-console@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@txo/log-console/-/log-console-3.0.0.tgz#56506a8c6afea9109301ff96520c43815814022d"
@@ -1549,6 +1557,11 @@
   version "2.0.13"
   resolved "https://registry.yarnpkg.com/@txo/log/-/log-2.0.13.tgz#663100f59df18f4ddec9d85f62a20ec4b5e24b54"
   integrity sha512-fDUAJ5n+bC+/xqHFpM4Ua4nuQjWcRLTSksLR5mLXZoUlH787SUzFkpUvjFJeiGKXOqUKt35ImInLZb0oQ6yHhg==
+
+"@txo/log@^2.0.14":
+  version "2.0.14"
+  resolved "https://registry.yarnpkg.com/@txo/log/-/log-2.0.14.tgz#27be76d85d724c2391228658b43018fa7a1b8f78"
+  integrity sha512-ptJYpsGPkJFw2FUmpTstU1gaEea1uVXB/0r5jC1AkvoNe/ozeCos91FnIjxp0eFzu7SgV9OnbAH7hCcGxhVcgQ==
 
 "@txo/redux@^4.0.27":
   version "4.0.27"
