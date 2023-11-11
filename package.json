@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@txo/context-redux": "^3.0.31",
-    "@txo/functional": "^4.6.15",
+    "@txo/functional": "^4.6.16",
     "@txo/log": "^2.0.13",
     "@txo/redux": "^4.0.27",
     "@txo/service-prop": "^2.2.14",
