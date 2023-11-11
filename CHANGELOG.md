@@ -1,3 +1,10 @@
+## [5.1.4](https://github.com/technology-studio/service-react/compare/v5.1.3...v5.1.4) (2023-11-11)
+
+
+### Bug fixes
+
+* **deps:** update dependency @txo/functional to ^4.6.17 ([8f17aae](https://github.com/technology-studio/service-react/commit/8f17aae0bfae9d1969e2f3a1b1dbb0b27eaf88fb))
+
 ## [5.1.3](https://github.com/technology-studio/service-react/compare/v5.1.2...v5.1.3) (2023-11-11)
 
 
