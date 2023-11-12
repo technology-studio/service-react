@@ -1,3 +1,10 @@
+## [5.1.6](https://github.com/technology-studio/service-react/compare/v5.1.5...v5.1.6) (2023-11-12)
+
+
+### Bug fixes
+
+* **deps:** update dependency @txo/log to ^2.0.14 ([b8afd25](https://github.com/technology-studio/service-react/commit/b8afd254c3bd49b2fc922fab25dcc21480e52cb5))
+
 ## [5.1.5](https://github.com/technology-studio/service-react/compare/v5.1.4...v5.1.5) (2023-11-12)
 
 
