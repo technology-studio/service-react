@@ -34,10 +34,10 @@
     "update-boilerplate-version": "./scripts/update-boilerplate-version.sh"
   },
   "dependencies": {
-    "@txo/context-redux": "^3.0.33",
+    "@txo/context-redux": "^3.0.34",
     "@txo/functional": "^4.6.17",
     "@txo/log": "^2.0.14",
-    "@txo/redux": "^4.0.29",
+    "@txo/redux": "^4.0.30",
     "@txo/service-prop": "^2.2.16",
     "lodash.get": "^4.4.2"
   },
