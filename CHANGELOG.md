@@ -1,3 +1,24 @@
+## [5.1.10](https://github.com/technology-studio/service-react/compare/v5.1.9...v5.1.10) (2024-01-02)
+
+
+### Bug fixes
+
+* **deps:** update dependency redux-saga to ^1.3.0 ([839a614](https://github.com/technology-studio/service-react/commit/839a614ee587882ac4b0e5f62b4df060291ba5f7))
+
+## [5.1.9](https://github.com/technology-studio/service-react/compare/v5.1.8...v5.1.9) (2023-12-24)
+
+
+### Bug fixes
+
+* **deps:** update dependency @txo/context-redux to ^3.0.35 ([2f54fb8](https://github.com/technology-studio/service-react/commit/2f54fb8801b8f6ddcb201898153f81e34cfcf7f9))
+
+## [5.1.8](https://github.com/technology-studio/service-react/compare/v5.1.7...v5.1.8) (2023-12-05)
+
+
+### Bug fixes
+
+* **deps:** update dependency @txo/context-redux to ^3.0.34 ([0255fd0](https://github.com/technology-studio/service-react/commit/0255fd0ba1f938fe7e598bd73ec66c155c95a270))
+
 ## [5.1.7](https://github.com/technology-studio/service-react/compare/v5.1.6...v5.1.7) (2023-11-12)
 
 
