@@ -1,3 +1,10 @@
+## [5.1.11](https://github.com/technology-studio/service-react/compare/v5.1.10...v5.1.11) (2024-01-03)
+
+
+### Bug fixes
+
+* **deps:** update dependency react-redux to v9 ([#535](https://github.com/technology-studio/service-react/issues/535)) ([319a63a](https://github.com/technology-studio/service-react/commit/319a63aeedabf0ec6e13886273a79da6d349a4a4))
+
 ## [5.1.10](https://github.com/technology-studio/service-react/compare/v5.1.9...v5.1.10) (2024-01-02)
 
 
