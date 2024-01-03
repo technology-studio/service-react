@@ -37,13 +37,13 @@
     "@txo/context-redux": "^3.0.35",
     "@txo/functional": "^4.6.17",
     "@txo/log": "^2.0.14",
-    "@txo/redux": "^4.0.29",
+    "@txo/redux": "^4.0.30",
     "@txo/service-prop": "^2.2.16",
     "lodash.get": "^4.4.2"
   },
   "peerDependencies": {
     "immutability-helper": "*",
-    "react-redux": "^8.1.3",
+    "react-redux": "^9.0.1",
     "redux-saga": "^1.3.0"
   },
   "devDependencies": {
@@ -65,7 +65,7 @@
     "lint-staged": "^15.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-redux": "^8.1.3",
+    "react-redux": "^9.0.1",
     "redux-saga": "^1.3.0",
     "rimraf": "^5.0.5",
     "ts-jest": "^29.1.1",
