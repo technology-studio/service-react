@@ -1541,15 +1541,6 @@
   resolved "https://registry.yarnpkg.com/@txo/log/-/log-2.0.14.tgz#27be76d85d724c2391228658b43018fa7a1b8f78"
   integrity sha512-ptJYpsGPkJFw2FUmpTstU1gaEea1uVXB/0r5jC1AkvoNe/ozeCos91FnIjxp0eFzu7SgV9OnbAH7hCcGxhVcgQ==
 
-"@txo/redux@^4.0.30":
-  version "4.0.30"
-  resolved "https://registry.yarnpkg.com/@txo/redux/-/redux-4.0.30.tgz#22f4a6f9dff7f67e4f69dacb2dde1c7c9e7605a8"
-  integrity sha512-cpdLYjCzfgqaMW5910eFeDy05vHdm+HejX/Ck8v5Tfz/CWwtAql/7PQ4g0vao9m45X/5mD40JfcK1KecqbS5uA==
-  dependencies:
-    "@txo/functional" "^4.6.17"
-    constant-case "^3.0.4"
-    redux "^5.0.0"
-
 "@txo/redux@^4.0.31":
   version "4.0.31"
   resolved "https://registry.yarnpkg.com/@txo/redux/-/redux-4.0.31.tgz#06789ddeb92ad7e678ca59f8d058ddde9fb1b04e"
@@ -7448,11 +7439,6 @@ redux-saga@^1.3.0:
   integrity sha512-J9RvCeAZXSTAibFY0kGw6Iy4EdyDNW7k6Q+liwX+bsck7QVsU78zz8vpBRweEfANxnnlG/xGGeOvf6r8UXzNJQ==
   dependencies:
     "@redux-saga/core" "^1.3.0"
-
-redux@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/redux/-/redux-5.0.0.tgz#29572e29a439e094ff8fec46883fc45053f6736d"
-  integrity sha512-blLIYmYetpZMET6Q6uCY7Jtl/Im5OBldy+vNPauA8vvsdqyt66oep4EUpAMWNHauTC6xa9JuRPhRB72rY82QGA==
 
 redux@^5.0.1:
   version "5.0.1"
