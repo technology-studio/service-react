@@ -56,7 +56,7 @@
     "@types/jest": "^29.5.12",
     "@types/lodash.get": "^4.4.9",
     "@types/react": "^18.2.74",
-    "@types/react-dom": "^18.2.23",
+    "@types/react-dom": "^18.2.24",
     "concurrently": "^8.2.2",
     "eslint-config-txo-typescript-react": "^2.0.49",
     "husky": "^8.0.3",
