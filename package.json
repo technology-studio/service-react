@@ -36,7 +36,7 @@
   "dependencies": {
     "@txo/context-redux": "^3.0.36",
     "@txo/functional": "^4.6.17",
-    "@txo/log": "^2.0.14",
+    "@txo/log": "^2.0.16",
     "@txo/redux": "^4.0.31",
     "@txo/service-prop": "^2.2.16",
     "lodash.get": "^4.4.2"
