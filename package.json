@@ -37,7 +37,7 @@
     "@txo/context-redux": "^3.0.37",
     "@txo/functional": "^4.6.19",
     "@txo/log": "^2.0.16",
-    "@txo/redux": "^4.0.31",
+    "@txo/redux": "^4.0.32",
     "@txo/service-prop": "^2.2.18",
     "lodash.get": "^4.4.2"
   },
