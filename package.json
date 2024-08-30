@@ -49,14 +49,14 @@
   },
   "devDependencies": {
     "@txo-peer-dep/log": "^4.0.4",
-    "@txo/commitlint": "^1.0.16",
+    "@txo/commitlint": "^1.0.17",
     "@txo/log-console": "^3.0.0",
     "@txo/semantic-release": "^2.0.8",
     "@txo/service-prop": "^2.2.18",
     "@txo/tsconfig": "^1.1.1",
     "@types/jest": "^29.5.12",
     "@types/lodash.get": "^4.4.9",
-    "@types/react": "^18.3.4",
+    "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "concurrently": "^8.2.2",
     "eslint-config-txo-typescript-react": "^2.0.68",
@@ -73,6 +73,6 @@
     "typescript": "^5.5.4"
   },
   "resolutions": {
-    "@types/react": "^18.3.4"
+    "@types/react": "^18.3.5"
   }
 }
