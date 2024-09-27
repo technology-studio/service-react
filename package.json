@@ -57,7 +57,7 @@
     "@txo/tsconfig": "^1.1.1",
     "@types/jest": "^29.5.13",
     "@types/lodash.get": "^4.4.9",
-    "@types/react": "^18.3.9",
+    "@types/react": "^18.3.10",
     "@types/react-dom": "^18.3.0",
     "concurrently": "^9.0.1",
     "eslint-config-txo-typescript-react": "^2.0.74",
@@ -74,6 +74,6 @@
     "typescript": "^5.6.2"
   },
   "resolutions": {
-    "@types/react": "^18.3.9"
+    "@types/react": "^18.3.10"
   }
 }
