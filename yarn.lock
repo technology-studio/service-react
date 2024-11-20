@@ -1418,17 +1418,22 @@
     semantic-release "^23.1.1"
     semantic-release-slack-bot "^4.0.2"
 
-"@txo/service-prop@^2.2.20":
-  version "2.2.20"
-  resolved "https://registry.yarnpkg.com/@txo/service-prop/-/service-prop-2.2.20.tgz#a7d3f5e237e19f80e269c4f5bd92b9d08a9b6d4f"
-  integrity sha512-LjTFX/iBiFvG2yuJm/Kk3Qsp6DNWqVNPeMfaaTe80sbFS/a4n5uBhrRVG4/oqe9NJg4O+8HllNKcqJYxwolAPw==
+"@txo/service-prop@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@txo/service-prop/-/service-prop-3.0.3.tgz#f8518ec014131358e9e531eba6812f3bedc79f83"
+  integrity sha512-Rt9GVlVXrMFFdK+x36rF86p5IUid49ez4s+aaow4CtMz6KF+j2mEeNvbhqa60Q8rFrwQVbprveXGKWH4EQGnOg==
   dependencies:
-    "@txo/functional" "^4.6.19"
+    "@txo/types" "^1.7.0"
 
 "@txo/tsconfig-cjs@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@txo/tsconfig-cjs/-/tsconfig-cjs-2.0.0.tgz#e5a323a4723a4050015e777181f4057770cd2e6a"
   integrity sha512-+ohrmhPJ8IMp32qvifgBDO+zYCrq0l/cg0NoKspOyoeyD3080DPsyoO405a6ipIC+lMR7e4Ou+/Az6q9Knc4fg==
+
+"@txo/types@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@txo/types/-/types-1.7.0.tgz#bb9db4417ceae237e51c14897f5c3f8b9f78cba2"
+  integrity sha512-mZfrfHMZK1hMDXKS7A8uvcBqqzYi5LLqg+wj4sDL77FZjQlZTdzXKlwwdco0HFamBPJS3iiDufW0Q/ZAyeRzSw==
 
 "@types/babel__core@^7.1.14":
   version "7.1.19"
