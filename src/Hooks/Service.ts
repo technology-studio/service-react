@@ -77,11 +77,11 @@ export const useService = <
       )
     }, [dispatch, evaluatedContext, redux.creators])
 
-  const clearException = useCallback((serviceErrorException: ServiceOperationError) => {
+  const clearException = useCallback((serviceOperationError: ServiceOperationError) => {
     dispatch(
       redux.creators.clearException(
         undefined,
-        { context: serviceErrorException.context },
+        { context: serviceOperationError.context },
       ),
     )
   }, [dispatch, redux.creators])
