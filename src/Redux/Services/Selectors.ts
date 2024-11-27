@@ -18,4 +18,4 @@ export const GLOBAL_CONTEXT = 'global'
 export const selectContextServiceState = <DATA>(
   state: ContextServiceState<DATA>,
   context: string,
-): ServiceState<DATA> => get(state, context, { data: null, fetching: false, exception: null }) as ServiceState<DATA>
+): ServiceState<DATA> => get(state, context, { data: null, isFetching: false, error: null }) as ServiceState<DATA>

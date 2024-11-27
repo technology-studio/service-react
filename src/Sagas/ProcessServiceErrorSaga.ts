@@ -7,7 +7,7 @@
 import {
   race, delay,
 } from 'redux-saga/effects'
-import type { ServiceErrorException } from '@txo/service-prop'
+import type { ServiceOperationError } from '@txo/service-prop'
 import { ServiceErrorKey } from '@txo/service-prop'
 import { Log } from '@txo/log'
 
@@ -20,7 +20,7 @@ type ServiceOptions = {
 }
 
 type ProcessServiceErrorAttributes = {
-  serviceErrorException: ServiceErrorException,
+  serviceErrorException: ServiceOperationError,
   serviceOptions?: ServiceOptions,
 }
 

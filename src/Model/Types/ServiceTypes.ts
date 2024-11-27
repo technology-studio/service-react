@@ -6,7 +6,7 @@
 
 import type { Action } from '@txo/redux'
 import type {
-  ServiceErrorException, ServiceCallResult,
+  ServiceOperationError, ServiceCallResult,
 } from '@txo/service-prop'
 
 import type { SagaGenerator } from './SagaTypes'
@@ -22,7 +22,7 @@ export type PromiseLikeServiceCallResult<DATA, CALL_DATA> = (
 
 export type ServicePromiseHandlers<DATA, CALL_DATA> = {
   resolve: (result: PromiseLikeServiceCallResult<DATA, CALL_DATA>) => void,
-  reject: (errorList: ServiceErrorException) => void,
+  reject: (errorList: ServiceOperationError) => void,
 }
 export type ServiceAttributes = {
   service: DefaultRootService,
@@ -45,10 +45,10 @@ export type ContextServiceAction<ATTRIBUTES = {}, DATA = undefined, CALL_DATA = 
 )
 
 export type ServiceCall<
-    ATTRIBUTES,
-    DATA = undefined,
-    SERVICE_ATTRIBUTES extends ServiceAttributes = ServiceAttributes,
-    CALL_DATA = undefined,
+  ATTRIBUTES,
+  DATA = undefined,
+  SERVICE_ATTRIBUTES extends ServiceAttributes = ServiceAttributes,
+  CALL_DATA = undefined,
 > = (
   attributes: ATTRIBUTES,
   serviceAttributes: SERVICE_ATTRIBUTES

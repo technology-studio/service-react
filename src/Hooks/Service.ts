@@ -17,10 +17,10 @@ import type {
   ServiceProp,
   ValueOrValueMapper,
   CallAttributes,
-  ServiceErrorException,
+  ServiceOperationError,
   ServiceCallResult,
 } from '@txo/service-prop'
-import { isNotEmptyString } from '@txo/functional'
+import { isNotEmptyString } from '@txo/types'
 
 import { evaluateValue } from '../Api/EvaulatedValueHelper'
 import type {
@@ -39,13 +39,13 @@ type ServiceDeclaration<
   ATTRIBUTES extends Record<string, unknown> | undefined,
   DATA,
   REDUX_STATE,
-  > = {
-    context?: ValueOrValueMapper<string>,
-    validationAttributes?: ValueOrValueMapper<string[] | BooleanMap>,
-    selector: (state: REDUX_STATE) => ContextServiceState<DATA>,
-    // eslint-disable-next-line @typescript-eslint/ban-types
-    redux: ContextServiceRedux<NonNullable<ATTRIBUTES> | {}, DATA>,
-  }
+> = {
+  context?: ValueOrValueMapper<string>,
+  validationAttributes?: ValueOrValueMapper<string[] | BooleanMap>,
+  selector: (state: REDUX_STATE) => ContextServiceState<DATA>,
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  redux: ContextServiceRedux<NonNullable<ATTRIBUTES> | {}, DATA>,
+}
 
 export const useService = <
   ATTRIBUTES extends Record<string, unknown> | undefined,
@@ -53,9 +53,9 @@ export const useService = <
   CALL_ATTRIBUTES extends CallAttributes<ATTRIBUTES> | undefined,
   REDUX_STATE,
   CALL_DATA = undefined,
-  >(
-    serviceDeclaration: ServiceDeclaration<ATTRIBUTES, DATA, REDUX_STATE>,
-  ): ServiceProp<ATTRIBUTES, DATA, CALL_ATTRIBUTES, CALL_DATA> => {
+>(
+  serviceDeclaration: ServiceDeclaration<ATTRIBUTES, DATA, REDUX_STATE>,
+): ServiceProp<ATTRIBUTES, DATA, CALL_ATTRIBUTES, CALL_DATA> => {
   const {
     context = GLOBAL_CONTEXT,
     validationAttributes,
@@ -65,7 +65,7 @@ export const useService = <
   const evaluatedContext = evaluateValue(context)
   const dispatch = useDispatch()
   const contextServiceState = useSelector(selector)
-  const { data, fetching, exception } = selectContextServiceState(contextServiceState, evaluatedContext)
+  const { data, isFetching, error } = selectContextServiceState(contextServiceState, evaluatedContext)
 
   const clear = useCallback(
     (callContext?: string) => {
@@ -77,7 +77,7 @@ export const useService = <
       )
     }, [dispatch, evaluatedContext, redux.creators])
 
-  const clearException = useCallback((serviceErrorException: ServiceErrorException) => {
+  const clearException = useCallback((serviceErrorException: ServiceOperationError) => {
     dispatch(
       redux.creators.clearException(
         undefined,
@@ -114,7 +114,7 @@ export const useService = <
       validationAttributes,
     },
     data,
-    exception,
-    fetching,
-  }), [call, clear, clearException, data, exception, fetching, validationAttributes])
+    error,
+    isFetching,
+  }), [call, clear, clearException, data, error, isFetching, validationAttributes])
 }
