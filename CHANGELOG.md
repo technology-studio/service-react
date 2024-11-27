@@ -1,3 +1,23 @@
+## [6.0.0](https://github.com/technology-studio/service-react/compare/v5.1.22...v6.0.0) (2024-11-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade to @txo/service-prop v3 and fix breaking changes
+
+### CI
+
+* add lint command for CI ([#707](https://github.com/technology-studio/service-react/issues/707)) ([ab1f7e3](https://github.com/technology-studio/service-react/commit/ab1f7e39e84a415f2b6872832e54845d14c9094a))
+* add synchronize to PR workflow ([#754](https://github.com/technology-studio/service-react/issues/754)) ([a7eda47](https://github.com/technology-studio/service-react/commit/a7eda4753e7050839a4483bc27b2bcdde037ad27))
+* rename workflows ([#720](https://github.com/technology-studio/service-react/issues/720)) ([4684c03](https://github.com/technology-studio/service-react/commit/4684c03a5ace41d9404c2c933337f8a8dc977f52))
+* update pr and release workflows ([#752](https://github.com/technology-studio/service-react/issues/752)) ([cb6a3ea](https://github.com/technology-studio/service-react/commit/cb6a3ea42e85d8af26e5be71288d7c04ec861489))
+* update URL for code-quality ([#713](https://github.com/technology-studio/service-react/issues/713)) ([5cc350b](https://github.com/technology-studio/service-react/commit/5cc350bdf82733e58105c769cdf77499d0ca7f04))
+
+
+### Bug fixes
+
+* update service-prop dependency to v3 ([#761](https://github.com/technology-studio/service-react/issues/761)) ([d528938](https://github.com/technology-studio/service-react/commit/d528938ce5431a9bd0632e63060034718bf89957))
+
 ## [5.1.22](https://github.com/technology-studio/service-react/compare/v5.1.21...v5.1.22) (2024-05-02)
 
 
