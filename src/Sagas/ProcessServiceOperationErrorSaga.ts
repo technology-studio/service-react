@@ -7,31 +7,31 @@
 import {
   race, delay,
 } from 'redux-saga/effects'
-import type { ServiceErrorException } from '@txo/service-prop'
+import type { ServiceOperationError } from '@txo/service-prop'
 import { ServiceErrorKey } from '@txo/service-prop'
 import { Log } from '@txo/log'
 
 import type { SagaGenerator } from '../Model/Types'
 
-const log = new Log('@txo.react-service.Sagas.ProcessServiceErrorSaga')
+const log = new Log('@txo.react-service.Sagas.ProcessServiceOperationErrorSaga')
 
 type ServiceOptions = {
   retryUntilOnlinePeriod?: number,
 }
 
-type ProcessServiceErrorAttributes = {
-  serviceErrorException: ServiceErrorException,
+type ProcessServiceOperationErrorAttributes = {
+  serviceOperationError: ServiceOperationError,
   serviceOptions?: ServiceOptions,
 }
 
-export type ProcessServiceErrorResult = {
+export type ProcessServiceOperationErrorResult = {
   retryCall?: boolean,
 }
 
-export function * processServiceErrorSaga (
-  attributes: ProcessServiceErrorAttributes,
-): SagaGenerator<ProcessServiceErrorResult | undefined> {
-  const { serviceErrorException: { serviceErrorList }, serviceOptions } = attributes
+export function * processServiceOperationErrorSaga (
+  attributes: ProcessServiceOperationErrorAttributes,
+): SagaGenerator<ProcessServiceOperationErrorResult | undefined> {
+  const { serviceOperationError: { serviceErrorList }, serviceOptions } = attributes
 
   if (serviceErrorList.some(({ key }) => key as ServiceErrorKey === ServiceErrorKey.NETWORK_ERROR)) {
     log.debug('NETWORK ERROR')

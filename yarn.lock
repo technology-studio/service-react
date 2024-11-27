@@ -1418,17 +1418,22 @@
     semantic-release "^23.1.1"
     semantic-release-slack-bot "^4.0.2"
 
-"@txo/service-prop@^2.2.20":
-  version "2.2.20"
-  resolved "https://registry.yarnpkg.com/@txo/service-prop/-/service-prop-2.2.20.tgz#a7d3f5e237e19f80e269c4f5bd92b9d08a9b6d4f"
-  integrity sha512-LjTFX/iBiFvG2yuJm/Kk3Qsp6DNWqVNPeMfaaTe80sbFS/a4n5uBhrRVG4/oqe9NJg4O+8HllNKcqJYxwolAPw==
+"@txo/service-prop@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@txo/service-prop/-/service-prop-3.0.3.tgz#f8518ec014131358e9e531eba6812f3bedc79f83"
+  integrity sha512-Rt9GVlVXrMFFdK+x36rF86p5IUid49ez4s+aaow4CtMz6KF+j2mEeNvbhqa60Q8rFrwQVbprveXGKWH4EQGnOg==
   dependencies:
-    "@txo/functional" "^4.6.19"
+    "@txo/types" "^1.7.0"
 
 "@txo/tsconfig-cjs@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@txo/tsconfig-cjs/-/tsconfig-cjs-2.0.0.tgz#e5a323a4723a4050015e777181f4057770cd2e6a"
   integrity sha512-+ohrmhPJ8IMp32qvifgBDO+zYCrq0l/cg0NoKspOyoeyD3080DPsyoO405a6ipIC+lMR7e4Ou+/Az6q9Knc4fg==
+
+"@txo/types@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@txo/types/-/types-1.7.0.tgz#bb9db4417ceae237e51c14897f5c3f8b9f78cba2"
+  integrity sha512-mZfrfHMZK1hMDXKS7A8uvcBqqzYi5LLqg+wj4sDL77FZjQlZTdzXKlwwdco0HFamBPJS3iiDufW0Q/ZAyeRzSw==
 
 "@types/babel__core@^7.1.14":
   version "7.1.19"
@@ -1534,11 +1539,11 @@
     "@types/unist" "^2"
 
 "@types/node@*":
-  version "22.5.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.5.4.tgz#83f7d1f65bc2ed223bdbf57c7884f1d5a4fa84e8"
-  integrity sha512-FDuKUJQm/ju9fT/SeX/6+gBzoPzlVCzfzmGkwKvRHQVxi4BntVbyIwf6a4Xn62mrvndLiml6z/UBXIdEVjQLXg==
+  version "22.10.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.10.0.tgz#89bfc9e82496b9c7edea3382583fa94f75896e81"
+  integrity sha512-XC70cRZVElFHfIUB40FgZOBbgJYFKKMa5nb9lxcwYstFG/Mi+/Y0bGS+rs6Dmhmkpq4pnNiLiuZAbc02YCOnmA==
   dependencies:
-    undici-types "~6.19.2"
+    undici-types "~6.20.0"
 
 "@types/normalize-package-data@^2.4.3":
   version "2.4.3"
@@ -8158,10 +8163,10 @@ typescript-tuple@^2.2.1:
   dependencies:
     typescript-compare "^0.0.2"
 
-typescript@^5.6.3:
-  version "5.6.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.6.3.tgz#5f3449e31c9d94febb17de03cc081dd56d81db5b"
-  integrity sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==
+typescript@^5.7.2:
+  version "5.7.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.7.2.tgz#3169cf8c4c8a828cde53ba9ecb3d2b1d5dd67be6"
+  integrity sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==
 
 uglify-js@^3.1.4:
   version "3.17.4"
@@ -8178,10 +8183,10 @@ unbox-primitive@^1.0.2:
     has-symbols "^1.0.3"
     which-boxed-primitive "^1.0.2"
 
-undici-types@~6.19.2:
-  version "6.19.8"
-  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.19.8.tgz#35111c9d1437ab83a7cdc0abae2f26d88eda0a02"
-  integrity sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==
+undici-types@~6.20.0:
+  version "6.20.0"
+  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.20.0.tgz#8171bf22c1f588d1554d55bf204bc624af388433"
+  integrity sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==
 
 unicode-emoji-modifier-base@^1.0.0:
   version "1.0.0"

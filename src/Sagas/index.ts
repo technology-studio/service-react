@@ -6,4 +6,4 @@
 
 export * from './AsyncServiceSagas'
 export * from './ContextServiceSagas'
-export * from './ProcessServiceErrorSaga'
+export * from './ProcessServiceOperationErrorSaga'

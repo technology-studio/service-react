@@ -9,7 +9,7 @@ import {
 } from 'redux-saga/effects'
 import type { ServiceCallResult } from '@txo/service-prop'
 import {
-  isServiceErrorException,
+  isServiceOperationError,
 } from '@txo/service-prop'
 import { Log } from '@txo/log'
 
@@ -21,9 +21,9 @@ import type {
 } from '../Model/Types'
 
 import {
-  type ProcessServiceErrorResult,
-  processServiceErrorSaga,
-} from './ProcessServiceErrorSaga'
+  type ProcessServiceOperationErrorResult,
+  processServiceOperationErrorSaga,
+} from './ProcessServiceOperationErrorSaga'
 
 const log = new Log('txo.react-service.Sagas.ContextServiceSaga')
 
@@ -48,20 +48,20 @@ export function * contextServiceActionSaga<ATTRIBUTES extends Record<string, unk
         yield call(promiseHandlers.resolve, serviceCallResult)
       }
       return serviceCallResult
-    } catch (errorOrServiceErrorException) {
+    } catch (errorOrServiceOperationError) {
       log.debug('EXCEPTION')
-      if (isServiceErrorException(errorOrServiceErrorException)) {
-        const result = (yield call(processServiceErrorSaga, { serviceErrorException: errorOrServiceErrorException })) as ProcessServiceErrorResult | undefined
+      if (isServiceOperationError(errorOrServiceOperationError)) {
+        const result = (yield call(processServiceOperationErrorSaga, { serviceOperationError: errorOrServiceOperationError })) as ProcessServiceOperationErrorResult | undefined
         if (result?.retryCall ?? false) {
           continue
         }
-        yield put(redux.creators.serviceFailure({ exception: errorOrServiceErrorException }, { context }))
+        yield put(redux.creators.serviceFailure({ error: errorOrServiceOperationError }, { context }))
         if (promiseHandlers != null) {
-          yield call(promiseHandlers.reject, errorOrServiceErrorException)
+          yield call(promiseHandlers.reject, errorOrServiceOperationError)
         }
         return
       } else {
-        throw errorOrServiceErrorException
+        throw errorOrServiceOperationError
       }
     }
   }
