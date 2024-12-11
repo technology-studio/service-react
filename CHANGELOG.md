@@ -1,3 +1,10 @@
+## [6.0.1](https://github.com/technology-studio/service-react/compare/v6.0.0...v6.0.1) (2024-12-11)
+
+
+### Bug fixes
+
+* **deps:** update react packages ([#768](https://github.com/technology-studio/service-react/issues/768)) ([e6d0cd2](https://github.com/technology-studio/service-react/commit/e6d0cd2a3b1844ce16ec3ad6a7b6591b71264ba2))
+
 ## [6.0.0](https://github.com/technology-studio/service-react/compare/v5.1.22...v6.0.0) (2024-11-27)
 
 
