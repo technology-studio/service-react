@@ -1,7 +1,6 @@
 [
   "@typescript-eslint/no-magic-numbers",
   "eslint-comments/require-description",
-  "@typescript-eslint/ban-types",
   "@typescript-eslint/no-empty-object-type",
   "@typescript-eslint/consistent-type-exports",
   "@typescript-eslint/no-unsafe-type-assertion",
