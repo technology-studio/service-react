@@ -11,7 +11,6 @@ import type {
 
 import type { SagaGenerator } from './SagaTypes'
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface DefaultRootService {
 }
 
@@ -37,7 +36,6 @@ export type ServiceAction<ATTRIBUTES, DATA, CALL_DATA> = Action & {
   promiseHandlers?: ServicePromiseHandlers<DATA, CALL_DATA>,
 }
 
-// eslint-disable-next-line @typescript-eslint/ban-types
 export type ContextServiceAction<ATTRIBUTES = {}, DATA = undefined, CALL_DATA = undefined> = (
   ServiceAction<ATTRIBUTES, DATA, CALL_DATA> & {
     context: string,

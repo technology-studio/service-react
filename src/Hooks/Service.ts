@@ -43,7 +43,6 @@ type ServiceDeclaration<
   context?: ValueOrValueMapper<string>,
   validationAttributes?: ValueOrValueMapper<string[] | BooleanMap>,
   selector: (state: REDUX_STATE) => ContextServiceState<DATA>,
-  // eslint-disable-next-line @typescript-eslint/ban-types
   redux: ContextServiceRedux<NonNullable<ATTRIBUTES> | {}, DATA>,
 }
 

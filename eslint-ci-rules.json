@@ -1,0 +1,11 @@
+[
+  "@typescript-eslint/no-magic-numbers",
+  "@typescript-eslint/no-empty-object-type",
+  "@typescript-eslint/consistent-type-exports",
+  "@typescript-eslint/no-unsafe-type-assertion",
+  "@stylistic/space-before-function-paren",
+  "@typescript-eslint/max-params",
+  "complexity",
+  "@typescript-eslint/only-throw-error",
+  "@typescript-eslint/prefer-destructuring"
+]

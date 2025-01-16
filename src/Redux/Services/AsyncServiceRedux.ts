@@ -12,7 +12,6 @@ import {
   createRedux,
 } from '@txo/redux'
 
-// eslint-disable-next-line @typescript-eslint/ban-types
 type AsyncState = {}
 
 type Handlers<DATA, ATTRIBUTES> = {
@@ -24,11 +23,11 @@ export type AsyncServiceRedux<ATTRIBUTES> = Redux<AsyncState, AsyncState, keyof 
 export const createAsyncServiceRedux = <ATTRIBUTES>(
   prefix: string,
 ): AsyncServiceRedux<ATTRIBUTES> => createRedux<AsyncState, keyof Handlers<AsyncState, ATTRIBUTES>, Handlers<AsyncState, ATTRIBUTES>>({
-    filter: '*',
-    initialState: {
-    },
-    handlers: {
-      serviceCall: (state: AsyncState) => state,
-    },
-    prefix,
-  })
+  filter: '*',
+  initialState: {
+  },
+  handlers: {
+    serviceCall: (state: AsyncState) => state,
+  },
+  prefix,
+})
