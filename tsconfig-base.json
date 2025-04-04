@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "jsx": "react"
+    "jsx": "react",
+    "lib": [ "DOM" ]
   },
   "extends": "@txo/tsconfig-cjs"
 }

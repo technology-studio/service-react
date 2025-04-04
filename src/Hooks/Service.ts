@@ -43,6 +43,7 @@ type ServiceDeclaration<
   context?: ValueOrValueMapper<string>,
   validationAttributes?: ValueOrValueMapper<string[] | BooleanMap>,
   selector: (state: REDUX_STATE) => ContextServiceState<DATA>,
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type -- TODO: figure out if we can change to `object`
   redux: ContextServiceRedux<NonNullable<ATTRIBUTES> | {}, DATA>,
 }
 
@@ -89,6 +90,7 @@ export const useService = <
     attributes: ATTRIBUTES,
     callAttributes?: CALL_ATTRIBUTES,
   ): Promise<ServiceCallResult<DATA, CALL_DATA>> => (
+    // eslint-disable-next-line promise/avoid-new -- we need to create a new promise and return it
     await new Promise((resolve, reject) => {
       const serviceCallResolve = (
         serviceCallResult: PromiseLikeServiceCallResult<DATA, CALL_DATA>,
