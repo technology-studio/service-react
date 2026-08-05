@@ -89,6 +89,7 @@ export const useService = <
     attributes: ATTRIBUTES,
     callAttributes?: CALL_ATTRIBUTES,
   ): Promise<ServiceCallResult<DATA, CALL_DATA>> => (
+    // eslint-disable-next-line promise/avoid-new -- service call is resolved by the saga through promise handlers
     await new Promise((resolve, reject) => {
       const serviceCallResolve = (
         serviceCallResult: PromiseLikeServiceCallResult<DATA, CALL_DATA>,
